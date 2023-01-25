@@ -1,0 +1,62 @@
+m
+n
+
+low
+high
+
+partitionX
+(low + high) / 2
+
+partitionY
+(m + n + 1) / 2 - partitionX
+
+maxLeftX
+partitionX == 0
+nums1[partitionX - 1]
+
+minRightX
+partitionX == m
+nums1[partitionX]
+
+maxLeftY
+partitionY == 0
+nums2[partitionY - 1]
+
+minRightY
+partitionY == n
+nums2[partitionY]
+
+
+maxLeftX <= minRightY
+maxLeftY <= minRightX
+
+(m + n) % 2
+
+Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY)) / 2
+Math.max(maxLeftX, maxLeftY)
+
+
+maxLeftX > minRightY
+partitionX - 1
+
+maxLeftX < minRightY
+partitionX + 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

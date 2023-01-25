@@ -1,0 +1,17 @@
+This code defines a public class "B10" which contains a single public static method "isMatch". The method takes in two input strings, "s" and "p", which represents the string to be matched and the pattern string respectively.
+
+The method first declares two integer variables "m" and "n" to store the length of the input strings "s" and "p" respectively. It then creates a 2D boolean array "dp" with dimensions (m+1)x(n+1) to store the matching results. The first element of the array is initialized as true.
+
+The method then uses a for loop to iterate through the pattern string "p". Inside the loop, it checks if the current character is '*' and its previous element in the array is true. If both conditions are met, it sets the current element in the first row of the "dp" array as true.
+
+The method then uses nested for loops to iterate through both input strings "s" and "p". Inside the nested loops, it first checks if the current character in the pattern is '*'. If it is, it checks if the current character in the string matches the previous character in the pattern or the previous character in the pattern is '.'. If either condition is true, it sets the current element in the "dp" array as true.
+
+If the current character in the pattern is not '*', the method checks if the current character in the string matches the current character in the pattern, or the current character in the pattern is '.'. If either condition is true, it sets the current element in the "dp" array as true.
+
+After the nested loops have completed, the method returns the final matching result stored in the last element of the "dp" array, which is dp[m][n].
+
+This function is an implementation of a dynamic programming approach to solve the problem of regular expression matching. Specifically, it's using a technique called "backtracking" which allows to check all possible combinations of characters in the input string "s" and pattern string "p" and find a match.
+
+It's using a 2D array dp[i][j] where i is the index of the input string and j is the index of the pattern. The dp array is used to store the result of whether the input string upto index i matches the pattern upto index j. It's filling the array in a bottom-up manner.
+
+The function returns a boolean value indicating whether the input string matches the pattern.
