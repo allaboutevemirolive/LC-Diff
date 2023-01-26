@@ -1,4 +1,4 @@
-class B0075 {
+class B75 {
     public void sortColors(int[] nums) {
         int i = 0, j = nums.length - 1;
         for (int k = 0; k <= j; k++) {

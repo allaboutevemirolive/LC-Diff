@@ -1,0 +1,11 @@
+This code is a solution to a problem where the task is to find the number of unique paths from the top-left corner to the bottom-right corner of a given grid with obstacles. The grid is filled with non-negative numbers, and each cell in the grid represents a point in the path. The goal is to find the number of unique paths that exist from the top-left corner to the bottom-right corner while avoiding obstacles.
+
+The code uses dynamic programming with a bottom-up approach to solve the problem. It starts by initializing two variables, m and n, which represent the number of rows and columns in the grid, respectively. Next, it creates a one-dimensional array, dp, with the same number of columns as the grid.
+
+The first element in the dp array is set to 1 if the first cell in the grid is not an obstacle, and 0 if it is an obstacle. This is to ensure that if the first cell is an obstacle, no path can be found, and the number of unique paths is 0.
+
+Next, it uses nested for loops to iterate through each cell in the grid. For each cell, it checks if it is an obstacle. If it is, the code sets the corresponding element in the dp array to 0, as no path can pass through an obstacle. If it is not an obstacle and j > 0, the code adds the value of the previous element in the dp array to the current element, because the number of unique paths for a particular cell is the sum of the number of unique paths for the cell above it and the cell to the left of it. This is because at any point in time, a path can only move either down or right. By adding the value of the previous element in the dp array, we are counting the number of unique paths that lead to the current cell.
+
+The code then returns the last element in the dp array, which represents the number of unique paths from the top-left corner to the bottom-right corner of the grid.
+
+It is worth noting that this solution is optimized in terms of space complexity as it uses a one-dimensional dp array instead of a two-dimensional dp array. Also, the solution is concise and have a linear time complexity.

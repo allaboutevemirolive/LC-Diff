@@ -1,4 +1,4 @@
-class A0074 {
+class B74 {
     public boolean searchMatrix(int[][] matrix, int target) {
         int start = 0;
         int end = matrix.length * matrix[0].length - 1;

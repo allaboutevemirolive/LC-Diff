@@ -1,4 +1,4 @@
-class C0075 {
+class C75 {
     public void sortColors(int[] nums) {
         int red = 0;
         int white = 0;

@@ -1,0 +1,18 @@
+This code is solving the problem of finding the number of unique paths a robot can take to reach the bottom-right corner of a grid while avoiding obstacles. The grid is represented by the input variable "obstacleGrid", which is a 2D array of integers, where 0 represents a clear path and 1 represents an obstacle.
+
+The code first declares two variables, "m" and "n", which represent the number of rows and columns in the grid, respectively. It then declares an integer array "dp" with a length of "n", which will be used to store the number of unique paths to each location in the grid.
+
+The code then initializes the first element of the "dp" array to 1 if the first element in the grid is a clear path (obstacleGrid[0][0] == 0) and 0 if it is an obstacle (obstacleGrid[0][0] == 1).
+
+The code then uses nested for loops to iterate through each element in the grid. The outer loop iterates through the rows of the grid, while the inner loop iterates through the columns.
+
+For each element in the grid, the code checks if it is an obstacle (obstacleGrid[i][j] == 1). If it is, the corresponding element in the "dp" array is set to 0, as the robot cannot take any path that goes through an obstacle.
+
+If the element is not an obstacle, the code checks if it is the first column (j == 0). If it is, the code does not update the "dp" array, as the number of unique paths to this location is already initialized to 1.
+
+Otherwise, the code updates the current element in the "dp" array by adding the number of unique paths to the location above it (dp[j]) and the number of unique paths to the location to the left of it (dp[j-1]). This is because the robot can only move either down or right, and the number of unique paths to a location is the sum of the number of unique paths to the location above it and the number of unique paths to the location to the left of it.
+
+Finally, the code returns the last element of the "dp" array, which represents the number of unique paths to the bottom-right corner of the grid.
+
+
+
