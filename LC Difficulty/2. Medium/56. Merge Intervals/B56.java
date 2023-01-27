@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class B {
+class B56 {
     public int[][] merge(int[][] intervals) {
         // Find the maximum number in the list of intervals
         int max = 0;

@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class C {
+public class C56 {
     public int[][] merge(int[][] intervals) {
         if (intervals.length == 0) {
             return new int[0][];

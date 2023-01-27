@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class A75 {
     public static void main(String[] args) {
         B75 b75 = new B75();

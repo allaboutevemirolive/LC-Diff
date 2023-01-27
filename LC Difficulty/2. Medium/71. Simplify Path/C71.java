@@ -1,3 +1,6 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
 class C71 {
     public String simplifyPath(String path) {
         Deque<String> dq = new LinkedList<>();
