@@ -10,8 +10,8 @@ public class A25 {
 
         // Reverse the linked list in groups of 2
         int k = 2;
-        B25 A0025 = new B25();
-        ListNode reversed = A0025.reverseKGroup(head, k);
+        B25 b25 = new B25();
+        ListNode reversed = b25.reverseKGroup(head, k);
 
         // Print the reversed linked list
         while (reversed != null) {
