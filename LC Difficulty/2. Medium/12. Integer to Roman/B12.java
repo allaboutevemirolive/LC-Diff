@@ -1,6 +1,6 @@
-public class A0012 {
+public class B12 {
 
-    public static String intToRoman(int num) {
+    public String intToRoman(int num) {
         StringBuilder sb = new StringBuilder();
         while (num >= 1000) {
             sb.append("M");
@@ -11,7 +11,7 @@ public class A0012 {
             num -= 900; 
         }
         if (num >= 500) {
-            sb.append("D");-
+            sb.append("D");
             num -= 500;
         }
         if (num >= 400) {
