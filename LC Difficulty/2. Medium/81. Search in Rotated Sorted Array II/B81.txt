@@ -1,0 +1,57 @@
+The code you provided is a Java implementation of a binary search algorithm for a rotated sorted array. The class "B81" contains a single method "search" that takes in two arguments: an integer array "nums" and an integer "target".
+
+The method starts by initializing two pointers, "left" and "right", to the first and last indices of the array, respectively. It then enters a while loop that continues as long as the left pointer is less than or equal to the right pointer.
+
+Inside the loop, the middle index of the current search range is calculated by taking the average of the left and right pointers. The middle element of the array is then checked to see if it is equal to the target. If it is, the method returns true.
+
+The next step is to check if the left and middle elements of the array are equal. If they are, the left pointer is incremented and the loop continues.
+
+If the left and middle elements are not equal, the method checks if the left element is less than or equal to the middle element. If it is, the method then checks if the target is between the left and middle elements. If it is, the right pointer is set to mid-1. If it is not, the left pointer is set to mid+1.
+
+If the left element is greater than the middle element, the method checks if the target is between the middle and right elements. If it is, the left pointer is set to mid+1. If it is not, the right pointer is set to mid-1.
+
+The while loop continues until the left pointer is greater than the right pointer. If the target is not found, the method returns false.
+
+This method is efficient in terms of time complexity as it eliminates half of the elements from the search on each iteration of the loop, making it O(log n) time complexity, and the space complexity is O(1) as it only uses a constant amount of additional memory.
+
+
+###
+
+
+Below questions is similar to Search in Rotated Sorted Array, but nums may contain duplicates. 
+
+Would this affect the runtime complexity? How and why?
+
+
+-The presence of duplicates in the array can affect the runtime complexity of the search algorithm.
+-In a standard binary search algorithm, the runtime complexity is O(log n) because the search space is halved with each iteration.
+-However, with the presence of duplicates, it is possible for the search space to not be halved in each iteration, resulting in a worst case runtime complexity of O(n) if the entire array is filled with duplicates.
+-One way to optimize the search algorithm in this scenario would be to use a modified binary search algorithm that skips over duplicate elements.
+-This would ensure that the search space is halved in each iteration, resulting in a runtime complexity of O(log n) even in the presence of duplicates.
+-Additionally, an alternative approach would be to use a linear search which take O(n) time complexity.
+
+
+###
+
+
+The code is an implementation of binary search algorithm for finding a target element in a given sorted and rotated array. The overall approach is to use two pointers (left and right) to divide the array into two subarrays and check if the target element is present in the middle of the array. The key data structure used here is an array, and the key algorithm used is binary search.
+
+The time complexity of this algorithm is O(log n) as the input array is divided into half with each iteration of the while loop. The space complexity is O(1) as only a few variables are used to store the left, right, and middle index of the array.
+
+In terms of edge cases and error handling, the code assumes that the input array is sorted and rotated, and if the input array is not sorted and rotated, the output of the code may not be correct. Also, the code assumes that the input array is not empty, and if the input array is empty, the code will throw an index out of bounds exception.
+
+A test case for this code could be:
+
+int[] nums = {4,5,6,7,8,1,2,3};
+int target = 6;
+B81 b = new B81();
+System.out.println(b.search(nums, target));  // Output: true
+
+In terms of optimization, if the array is not sorted and rotated, we can sort the array before applying the binary search algorithm, which would make the algorithm run in O(nlogn) time complexity.
+
+An alternative solution for this problem could be linear search, which has a time complexity of O(n) but can be slower for large arrays. Another alternative could be using a modified version of binary search called the Jump Search algorithm.
+
+
+###
+
+
