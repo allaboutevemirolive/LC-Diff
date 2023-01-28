@@ -1,0 +1,38 @@
+The code above is a Java implementation of the Dijkstra's algorithm for finding the cheapest price from a source city (src) to a destination city (dst) with at most k stops. The problem is provided with an array of flights (flights) where each flight is represented as an array of three integers: fromi, toi, and pricei, indicating that there is a flight from city fromi to city toi with cost pricei.
+
+The overall approach of the solution is to use a modified version of Dijkstra's algorithm that takes into account the maximum number of stops (k). The key data structures used in the solution are an array (distance) to keep track of the minimum distance from the source to each destination and a 2D array (flights) representing the flights between the cities.
+
+The solution starts by initializing an array distance of size n, where n is the number of cities, and filling it with the maximum possible distance (Integer.MAX_VALUE). The distance from the source to the source is then set to 0.
+
+The solution then enters a loop where it iterates through the number of stops (k) and for each iteration, it calls the helper function isRoutePossible. The helper function is used to check if a route is possible from the current minimum distances. If a route is not possible, the loop exits.
+
+The loop iterates through all the flights, for each flight it checks if the minimum distance from the source to the destination is greater than the minimum distance from the source to the flight's origin plus the flight's cost. If this condition is true, it updates the minimum distance to the destination.
+
+After the loop, the solution returns the minimum distance to the destination, or -1 if there is no route.
+
+The time complexity of this solution is O(k * flights.length), where k is the number of stops and flights.length is the number of flights. The space complexity of this solution is O(n), where n is the number of cities.
+
+Edge cases and error handling:
+
+If the input array flights is empty or null, the function will return -1.
+If the input parameters src, dst, or k are invalid(out of range) the function will return -1.
+The input flights array should be in a valid format, if not the function will return -1.
+
+Test cases:
+
+The function should return 700 for the input n = 4, flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], src = 0, dst = 3, k = 1
+The function should return 200 for the input n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 1
+The function should return 500 for the input n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 0
+
+Optimizations:
+
+By using a priority queue, the time complexity can be reduced to O((n + flights.length)log(n))
+By using a dynamic programming approach, the time complexity can be reduced to O(n*k)
+By using Bellman-Ford algorithm, the time complexity can be reduced to O(n*flights.length)
+
+Alternative solutions:
+
+Bellman-Ford algorithm
+dynamic programming
+A* search algorithm
+Bidirectional search algorithm
