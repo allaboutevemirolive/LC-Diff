@@ -36,3 +36,156 @@ Bellman-Ford algorithm
 dynamic programming
 A* search algorithm
 Bidirectional search algorithm
+
+
+################################################################################
+
+
+There is 2 array & a line that you need to pay attention.
+
+
+int[] distance = new int[n];
+
+int[] copy = Arrays.copyOf(dist, dist.length);
+
+dist[dst] = cost + copy[src];
+
+
+Why?
+
+int[] copy = Arrays.copyOf(dist, dist.length);
+
+This line will copy the distance array and didn't increment any of it data. Which mean it only update data only if distance array updated
+
+Meaning copy array only update it data for each iteration since it only copy the data from distance array
+
+
+This line :
+
+	dist[dst] = cost + copy[src];
+
+is responsible for data update in distance array. For next iteration,
+
+this line :
+
+	int[] copy = Arrays.copyOf(dist, dist.length);
+
+is responsible to copy from distance array.
+
+
+Therefore, for the first iteration, copy array is like below and didn't increment any of it data
+
+____________________
+
+FIRST ITERATION :
+
+
+copy array:
+
+0: 0 
+1: 2147483647
+2: 2147483647
+3: 2147483647
+
+____________________
+
+
+Then for second iteration, the copy array only copy data from distance array so it's mean it didn't update but instead it just copy from distance array
+
+
+SECOND ITERATION
+
+
+copy array:
+
+0: 0 
+1: 100
+2: 2147483647
+3: 2147483647
+
+____________________
+
+
+
+
+=========================================================
+
+
+Below is the final data after each iteration in copy array and distance array
+
+
+
+
+FIRST ITERATION :
+
+
+copy array:
+
+0: 0 
+1: 2147483647
+2: 2147483647
+3: 2147483647
+__________________
+
+Distance array:
+
+0: 0 
+1: 100
+2: 2147483647
+3: 2147483647
+
+========================
+
+
+SECOND ITERATION
+
+
+copy array:
+
+0: 0 
+1: 100
+2: 2147483647
+3: 2147483647
+
+__________________
+
+Distance array:
+
+0: 0 
+1: 100
+2: 200
+3: 700
+
+__________________
+
+
+
+
+
+3 culprit line responsible for data changing in copy array those responsible for data update in distance array for second iteration :
+
+
+
+int[] distance = new int[n];
+
+int[] copy = Arrays.copyOf(dist, dist.length); //copy data from distance array
+
+
+
+dist[dst] = cost + copy[src];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
