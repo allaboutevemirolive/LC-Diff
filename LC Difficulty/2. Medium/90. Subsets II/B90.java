@@ -2,6 +2,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ * Pay attention to :
+ * 
+ * subsets.get(j)
+ * subset.add(nums[i])
+ * 
+ * j = x
+ * i = y
+ * 
+ * (x,y) = (j,i)
+ * 
+ * or maybe
+ * 
+ * (x,x,y) = (j,j,i)
+ */
 class B90 {
     public static List<List<Integer>> subsetsWithDup(int[] nums) {
         // Initialize an empty list to store the subsets
