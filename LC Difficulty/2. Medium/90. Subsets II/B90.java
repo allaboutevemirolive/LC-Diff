@@ -12,7 +12,11 @@ class B90 {
         // Meaning, subsetS will start with an empty element 
         subsets.add(new ArrayList<>());
         int startIndex = 0, endIndex = 0;
-        // Iterate through the input array
+        // For loop i, will iterate through the input array
+        // For loop i, responsible for element in coordinate x in (x,y)
+        // subsets.get(j)
+        // Element x will be taken from subsetS at index J
+        // Element in nums at index i will represent coordinates y in (x,y)
         for (int i = 0; i < nums.length; i++) {
             // If the current element is a duplicate of the previous element,
             // set the starting index to the end index of the previous iteration
