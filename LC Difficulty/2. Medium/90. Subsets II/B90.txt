@@ -1,0 +1,89 @@
+The code above is a solution to the problem of finding all possible subsets of an integer array that may contain duplicates, without including duplicate subsets in the result.
+
+The overall approach is a backtracking algorithm. 
+
+The key data structure used is a list of lists, where each inner list represents a subset. 
+
+The algorithm first sorts the input array to ensure that duplicates are next to each other. Then, it initializes an empty list to store the subsets and adds an empty subset to it. It then iterates through the input array and for each element, it creates a new subset by adding the current element to each subset in the subsets list, starting from a specified start index. The start index is set to the end index of the previous iteration if the current element is a duplicate of the previous element, to avoid adding duplicate subsets to the result. The end index is updated to the current size of the subsets list before the new subsets are added. Finally, the final subsets list is returned.
+
+The time complexity of this algorithm is O(2^n * n), where n is the length of the input array. This is because there are 2^n subsets possible for an array of length n and for each subset, we are iterating through the array once. The space complexity is O(2^n * n), as we are storing all subsets in the subsets list.
+
+The edge case and error handling is not mentioned in this code, like if the input array is empty or null it will throw a null pointer exception.
+
+The test cases would include:
+
+Testing with an array containing duplicates
+Testing with an array containing only one element
+Testing with an array containing all unique elements
+Testing with an array containing all negative and positive integers
+For optimization, we can use a bitmasking instead of backtracking algorithm, where we generate all possible subsets by iterating through all possible bitmasks and checking which elements should be included in the current subset.
+
+An alternative solution would be to use recursion, where we generate all subsets by recursively adding or not adding each element to the current subset.
+
+
+=====================================================================================
+
+
+This code : 
+
+	subsetS.get(j)
+
+in :
+
+	List<Integer> subset = new ArrayList<>(subsets.get(j));
+
+is responsible to create element on coordinates x in (0,0)
+______________________________
+
+For example :
+
+	subsets.get(j) = 2
+
+then :
+
+	(2,0)
+______________________________
+
+If :
+
+	subsets.get(j) = 0
+
+Then :
+
+	(0,0) or (0)
+
+______________________________
+
+
+Meaning, subsets.get(j) will retrieve subsetS array data at number j to add it into new subset array.
+
+__________________________________________
+
+This code responsible to create element on coordinates x in (0,0)
+
+	subsetS.get(j) // if, subsetS.get(j) = 2
+
+	List<Integer> subset = new ArrayList<>(subsets.get(j));
+
+__________________________________________
+
+This code responsible to create element on coordinates y in (0,0)
+
+	subset.add(nums[i]) // subset.add(nums[i]) = 3
+
+__________________________________________
+
+Then, coordinates (x,y) is
+
+(2,3)
+
+
+
+
+
+
+
+
+
+
+
