@@ -26,7 +26,17 @@ public class B93 {
             return;
         }
         int mem = 0;
-        // Loop through up to 3 characters from the index in the string
+        /*
+         * Loop through 3 characters of the string 's', 
+         * starting from the current position given by 'index'.
+         * 
+         * The loop continues only if there are still i characters remaining in the string 
+         * after the current position 'index'
+         * 
+         * the loop continues as long as 'i' is less than 3
+         * 
+         * This limits the loop to only get at most 3 characters from the string 's' at each iteration
+         */
         for (int i = 0; i < 3 && index + i < s.length(); i++) {
             // Convert a sequence of digits in the input string s into an integer value
             mem = mem * 10 + s.charAt(index + i) - '0';
