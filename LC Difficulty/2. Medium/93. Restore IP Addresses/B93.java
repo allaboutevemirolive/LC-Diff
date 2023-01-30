@@ -11,10 +11,24 @@ public class B93 {
         // Return the result
         return result;
     }
-
-    // Recursive function to restore IP addresses
+    /*
+     * Recursive function to restore IP addresses
+     * 
+     * result: This is a list of Strings that will store the final output.
+     * 
+     * buffer: This is a character array that is used to store the intermediate IP address 
+     * during the calculation process.
+     * 
+     * x: This is the starting position in the buffer array where the current IP address segment is stored.
+     * 
+     * s: This is the input string that contains the IP address.
+     * 
+     * index: This is the starting position in the input string where the current IP address segment starts.
+     * 
+     * number: This is the current segment of the IP address being processed. 
+     * It ranges from 1 to 4, representing the 4 segments of an IP address.
+     */
     public void restoreIpAddresses(List<String> result, char[] buffer, int x, String s, int index, int number) {
-        // If the number of integers (separated by dots) is 4, check if all characters in the string are processed
         // Checks if the length of the current extracted IP address segment is 4 characters long
         if (number == 4) {
             //  Check if the entire input string s has been processed 
@@ -30,10 +44,10 @@ public class B93 {
          * Loop through 3 characters of the string 's', 
          * starting from the current position given by 'index'.
          * 
+         * the loop continues as long as 'i' is less than 3
+         * 
          * The loop continues only if there are still i characters remaining in the string 
          * after the current position 'index'
-         * 
-         * the loop continues as long as 'i' is less than 3
          * 
          * This limits the loop to only get at most 3 characters from the string 's' at each iteration
          */
