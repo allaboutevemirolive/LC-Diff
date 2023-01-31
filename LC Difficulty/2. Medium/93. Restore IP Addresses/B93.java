@@ -26,7 +26,7 @@ public class B93 {
             return;
         }
 
-        // Initialize current segment
+        // Store converted sequence of digits in int, from s string
         int currentSegment = 0;
         // Loop through up to 3 characters of the input string
         for (int i = 0; i < 3 && inputIndex + i < input.length(); i++) {
