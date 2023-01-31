@@ -2,57 +2,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class B93 {
-    // Wrapper function to return the result
-    public List<String> restoreIpAddresses(String s) {
-        // Create a list to store the result
-        ArrayList<String> result = new ArrayList<>();
-        // Call the recursive function to process the string
-        restoreIpAddresses(result, new char[s.length() + 3], 0, s, 0, 0);
-        // Return the result
-        return result;
-    }
-    // result: This is a list of Strings that will store the final output.
-    // buffer: This is a character array that is used to store the intermediate IP address during the calculation process.
-    // x: This is the starting position in the buffer array where the current IP address segment is stored.
-    // s: This is the input string that contains the IP address.
-    // index: This is the starting position in the input string where the current IP address segment starts.
-    // number: This is the current segment of the IP address being processed. It ranges from 1 to 4, representing the 4 segments of an IP address.
-    public void restoreIpAddresses(List<String> result, char[] buffer, int x, String s, int index, int number) {
-        // Checks if the length of the current extracted IP address segment is 4 characters long
-        if (number == 4) {
-            // Check if the entire input string s has been processed
-            if (index == s.length()) {
-                // If yes, add the buffer containing IP address to result
-                result.add(new String(buffer));
-            }
-            // Return to prevent further processing
-            return;
-        }
-        // Store converted sequence of digits in int, from s string
-        int mem = 0;
-        // Loop through 3 characters of the string 's',
-        // starting from the current position given by 'index'.
-        // The loop continues as long as 'i' is less than 3
-        // The loop continues only if there are still i characters remaining in the string after the current position 'index'
-        // This limits the loop to only get at most 3 characters from the string 's' at each iteration
-        for (int i = 0; i < 3 && index + i < s.length(); i++) {
-            // Convert a sequence of digits in the input string s into an integer value
-            mem = mem * 10 + s.charAt(index + i) - '0';
-            // Condition 1:  If the integer value is larger than 255, break the loop
-            if (mem > 255) break;
-            // Copies the current character from the input string s, to the buffer array at the position x + i
-            buffer[x + i] = s.charAt(index + i);
-            // If there is enough room in the buffer array (i.e. x + i + 1 < buffer.length),
-            // Check whether there is enough space in the buffer array to store the next character
-            if (x + i + 1 < buffer.length) {
-                // Then a dot '.' is added at the index x + i + 1 in buffer[x + i + 1], after previous character (at index x + i) in buffer[x + i],
-                buffer[x + i + 1] = '.';
-            }
-            // Recursively call the function to process the next integer
-            restoreIpAddresses(result, buffer, x + i + 2, s, index + i + 1, number + 1);
-            // Condition 2: Checks if the computed integer value mem has leading zeros, and if so, it stops the loop
-            if (mem == 0) break;
-        }
+
+    // Method to return a list of all valid IP addresses that can be obtained from the input string
+    public List<String> restoreIpAddresses(String input) {
+        // Initialize list to store valid IP addresses
+        List<String> validAddresses = new ArrayList<>();
+        // Initialize character array to store each valid IP address as it's being constructed
+        char[] addressBuffer = new char[input.length() + 3];
+        // Call helper method to construct and add valid IP addresses to the list
+        restoreAddresses(validAddresses, addressBuffer, 0, input, 0, 0);
+        return validAddresses;
     }
 
+    // Helper method to construct and add valid IP addresses to the list
+    private void restoreAddresses(List<String> validAddresses, char[] addressBuffer, int bufferIndex, String input, int inputIndex, int segmentsCount) {
+        // If 4 segments have been constructed, check if all characters of the input string have been processed
+        if (segmentsCount == 4) {
+            // If all characters have been processed, add the constructed IP address to the list
+            if (inputIndex == input.length()) {
+                validAddresses.add(new String(addressBuffer));
+            }
+            // Return if 4 segments have been constructed but not all characters have been processed
+            return;
+        }
+
+        // Initialize current segment
+        int currentSegment = 0;
+        // Loop through up to 3 characters of the input string
+        for (int i = 0; i < 3 && inputIndex + i < input.length(); i++) {
+            // Construct current segment by converting characters to integer and adding to current segment
+            currentSegment = currentSegment * 10 + input.charAt(inputIndex + i) - '0';
+            // If current segment is greater than 255, break the loop
+            if (currentSegment > 255) break;
+            // Add current character to the address buffer
+            addressBuffer[bufferIndex + i] = input.charAt(inputIndex + i);
+            // If there is room in the buffer, add a period to separate segments
+            if (bufferIndex + i + 1 < addressBuffer.length) {
+                addressBuffer[bufferIndex + i + 1] = '.';
+            }
+            // Recursively call the helper method with updated parameters to construct the next segment
+            restoreAddresses(validAddresses, addressBuffer, bufferIndex + i + 2, input, inputIndex + i + 1, segmentsCount + 1);
+            // If current segment is 0, break the loop
+            if (currentSegment == 0) break;
+        }
+    }
 }

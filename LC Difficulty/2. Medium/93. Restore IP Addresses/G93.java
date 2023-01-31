@@ -3,29 +3,42 @@ import java.util.List;
 
 class G93 {
     public List<String> restoreIpAddresses(String s) {
-        List<String> res = new ArrayList<>();
-        backtrack(s, 0, 0, new StringBuilder(), res);
-        return res;
+        List<String> result = new ArrayList<>();
+        backtrack(s, 0, 0, new StringBuilder(), result);
+        return result;
     }
     
-    private void backtrack(String s, int index, int segment, StringBuilder sb, List<String> res) {
-        if (index == s.length() && segment == 4) {
-            res.add(sb.toString());
+    // Backtracking method to generate all possible valid IP addresses
+    private void backtrack(String inputString, int currentIndex, int currentSegment, StringBuilder currentIp, List<String> result) {
+        // If we have reached the end of the input string and we have 4 segments, we have a valid IP address
+        if (currentIndex == inputString.length() && currentSegment == 4) {
+            result.add(currentIp.toString());
             return;
         }
         
-        if (index == s.length() || segment == 4) return;
+        // If we have reached the end of the input string or we have 4 segments, return as it's not a valid IP address
+        if (currentIndex == inputString.length() || currentSegment == 4) return;
         
-        int len = sb.length();
-        for (int i = 1; i <= 3 && index + i <= s.length(); i++) {
-            String sub = s.substring(index, index + i);
-            if (sub.length() > 1 && sub.charAt(0) == '0') break;
-            int num = Integer.parseInt(sub);
-            if (num >= 0 && num <= 255) {
-                sb.append(sub);
-                if (segment < 3) sb.append(".");
-                backtrack(s, index + i, segment + 1, sb, res);
-                sb.setLength(len);
+        int originalLength = currentIp.length();
+        for (int i = 1; i <= 3 && currentIndex + i <= inputString.length(); i++) {
+            // Generate the current substring with length i
+            String currentSubstring = inputString.substring(currentIndex, currentIndex + i);
+            
+            // Check if the current substring is a valid segment (1 to 3 digits, no leading 0)
+            if (currentSubstring.length() > 1 && currentSubstring.charAt(0) == '0') break;
+            int currentNum = Integer.parseInt(currentSubstring);
+            if (currentNum >= 0 && currentNum <= 255) {
+                // Append the current segment to the IP address
+                currentIp.append(currentSubstring);
+                
+                // If this is not the last segment, append a '.'
+                if (currentSegment < 3) currentIp.append(".");
+                
+                // Backtrack with updated index and segment
+                backtrack(inputString, currentIndex + i, currentSegment + 1, currentIp, result);
+                
+                // Reset the length of the IP address back to the original length
+                currentIp.setLength(originalLength);
             }
         }
     }
