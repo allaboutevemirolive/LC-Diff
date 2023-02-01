@@ -31,6 +31,44 @@ In the second part of my answer, "latter increments segmentsCount by 1 and retur
 
 
 
+Mxltosa
+Why you need + i + 2  in bufferIndex + i + 2
+
+The expression bufferIndex + i + 2 in bufferIndex + i + 2, input, inputIndex + i + 1, segmentsCount + 1 refers to the index in the addressBuffer char array where the next segment of the IP address should start.
+
+In each iteration of the loop, the current segment of the IP address is being constructed and stored in the addressBuffer array starting from bufferIndex. The length of the current segment is i+1 characters, and the next segment is separated by a period '.', which takes up the i+2th position in the addressBuffer array.
+
+Therefore, bufferIndex + i + 2 represents the starting index of the next segment in the addressBuffer array.
+
+
+
+
+Why you need + i + 1  in inputIndex + i + 1
+
+The expression inputIndex + i + 1 in bufferIndex + i + 2, input, inputIndex + i + 1, segmentsCount + 1 refers to the index in the input string where the next segment of the IP address should start.
+
+In each iteration of the loop, the current segment of the IP address is being constructed from the characters in the input string starting from inputIndex. The length of the current segment is i+1 characters.
+
+Therefore, inputIndex + i + 1 represents the starting index of the next segment in the input string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
