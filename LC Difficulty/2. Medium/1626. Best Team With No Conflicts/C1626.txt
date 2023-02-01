@@ -1,0 +1,17 @@
+meaning of "->" in the code. Explain it in details
+
+
+The "->" operator in the code is a lambda expression in Java, which is a concise way of creating functional interfaces (interfaces with only one abstract method). In the code, the lambda expression (a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0] is used to compare two integer arrays a and b and sort them in ascending order of their scores. If scores of the two arrays are equal, the arrays are sorted in ascending order of their ages. The lambda expression acts as a comparator for the Arrays.sort method. This way, the sorting can be performed using a compact and readable syntax rather than using a traditional, verbose anonymous inner class.
+
+
+
+
+Mxltosa
+meaning a for  score and b for age?
+
+Yes, that's correct. In the lambda expression (a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0], the a and b arrays represent the players and 
+
+the a[0] and b[0] elements represent their scores. 
+The a[1] and b[1] elements represent the ages of the players. 
+
+The lambda expression compares the scores of two players first and sorts them in ascending order of their scores. If the scores are equal, it sorts the players based on their ages in ascending order.

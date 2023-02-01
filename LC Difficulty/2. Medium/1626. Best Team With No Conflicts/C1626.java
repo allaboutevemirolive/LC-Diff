@@ -11,7 +11,7 @@ class C1626 {
             playerDetails[i][0] = ages[i];
             playerDetails[i][1] = scores[i];
         }
-        // sorting the player details based on ages
+        // Sort the players based on their scores, in case of a tie, sort them based on their ages
         Arrays.sort(playerDetails, (a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]);
         // scores of selected players
         int[] scoresOfSelectedPlayers = new int[numberOfPlayers];
