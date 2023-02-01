@@ -5,3 +5,33 @@ The method first initializes a list to store valid IP addresses and a character 
 The "restoreAddresses" method takes in the list of valid IP addresses, the character array, the index of the buffer, the input string, the index of the input, and the count of segments. The method uses a loop to construct up to 3 characters of the input string into a current segment. The current segment is constructed by converting characters to integers and adding them to the current segment. If the current segment is greater than 255, the loop breaks. The current character is added to the address buffer and a period is added to separate segments if there is room in the buffer. The helper method is recursively called with updated parameters to construct the next segment. If the current segment is 0, the loop breaks.
 
 If 4 segments have been constructed and all characters of the input string have been processed, the constructed IP address is added to the list. If 4 segments have been constructed but not all characters have been processed, the method returns.
+
+
+Mxltosa
+Explain to me why you need this line of code
+
+Why segmentsCount + 1 is not same as ++segmentsCount
+
+
+The line segmentsCount + 1 is not the same as ++segmentsCount because the former adds 1 to segmentsCount and returns the result, while the latter increments segmentsCount by 1 and returns its new value.
+
+The purpose of this line is to keep track of the number of segments that have been constructed in the IP address. When 4 segments have been constructed, the IP address is considered to be valid and added to the list of valid IP addresses.
+
+
+
+
+Mxltosa
+What do you mean by this " former adds 1 to segmentsCount and returns the result,"
+
+What do you mean by this "latter increments segmentsCount by 1 and returns its new value."
+
+In the first part of my answer, "former adds 1 to segmentsCount and returns the result" means that the expression segmentsCount + 1 takes the value of segmentsCount and adds 1 to it, resulting in a new value. This new value is then returned by the expression. The original value of segmentsCount is not modified.
+
+In the second part of my answer, "latter increments segmentsCount by 1 and returns its new value" means that the expression ++segmentsCount increments the value of segmentsCount by 1 and then returns the new, incremented value. The original value of segmentsCount is modified.
+
+
+
+
+
+
+

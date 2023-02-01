@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class D93 {
+class E93 {
     public List<String> restoreIpAddresses(String s) {
         var result = new ArrayList<String>();
 
