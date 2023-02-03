@@ -15,7 +15,6 @@ class B96 {
                 // the product of the number of BST's with j-1 nodes as the left subtree
                 // and the number of BST's with i-j nodes as the right subtree
                 dp[i] += dp[j - 1] * dp[i - j];
-                System.out.println(dp[i]);
             }
         }
         
