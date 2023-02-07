@@ -1,0 +1,13 @@
+Explain to me like I am 12 about :
+
+
+"Find the longest continuous sub array that has exactly 2 distinct elements."
+
+
+
+Sure! Let's say you have a basket of fruits and you want to find the longest sequence of fruits you can pick from the basket where there are only 2 types of fruits in that sequence. That's what this problem is asking you to do.
+
+For example, if the basket has the following fruits: [3,3,3,1,2,1,1,2,3,3,4], the longest sequence you can pick where there are only 2 types of fruits is [1,2,1,1,2]. This sequence has 5 fruits, and there are only 2 types of fruits in the sequence (1 and 2).
+
+
+
