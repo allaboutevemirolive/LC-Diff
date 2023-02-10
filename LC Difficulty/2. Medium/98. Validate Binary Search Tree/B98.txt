@@ -1,0 +1,28 @@
+The code above is a solution to the problem "98. Validate Binary Search Tree" which is a classic problem in tree data structures.
+
+Overall Approach:
+
+The approach used in this code is to traverse the binary tree and check if the values in the left subtree are smaller than the root and the values in the right subtree are greater than the root. This way, the code checks if the binary tree is a valid binary search tree.
+Key Data Structures and Algorithms:
+
+The key data structure used in this code is a tree data structure.
+The algorithm used is a recursive approach to traverse the binary tree.
+Time Complexity:
+
+The time complexity of this code is O(n) where n is the number of nodes in the binary tree. This is because the code visits each node exactly once.
+Space Complexity:
+
+The space complexity of this code is O(h) where h is the height of the binary tree. This is because the code uses a recursive approach and the maximum number of function calls that can be stored on the call stack is equal to the height of the binary tree.
+Edge Cases and Error Handling:
+
+This code does not handle any specific edge cases.
+If the binary tree is not a valid BST, the code will return false.
+Test Cases:
+
+The code includes a test case in the main method which creates a binary tree with a root node with a value of 2, a left child node with a value of 1, and a right child node with a value of 3. The output of the code should be "Is the tree a valid BST: true".
+Optimizations:
+
+This code can be optimized by using an iterative approach instead of a recursive approach.
+Alternative Solutions:
+
+Another solution to this problem is to perform an in-order traversal of the binary tree and check if the values are sorted in ascending order.
