@@ -1,0 +1,37 @@
+Overall Approach:
+The code implements a two-pass approach to solve the problem.
+
+The first pass traverses the grid from top to bottom and from left to right. It calculates the distance of each water cell to the nearest land in the top and left direction.
+The second pass traverses the grid from bottom to top and from right to left. It updates the distance of each water cell to be the minimum distance from the nearest land in the current direction, bottom and right direction.
+After the two-pass approach, the code traverses the grid again to find the maximum distance among all the water cells.
+Data Structures and Algorithms Used:
+
+2D array: To represent the grid and store the distances of each cell.
+Loops: To traverse the grid and calculate the distances of each cell.
+Conditional statements: To check if the top, left, bottom, or right cells exist.
+Math.min: To calculate the minimum distance of the top, left, bottom, or right cells.
+Math.max: To calculate the maximum distance among all the water cells.
+Time Complexity:
+The time complexity is O(n^2) where n is the number of rows and columns in the grid. This is because the code uses nested loops to traverse the entire grid twice and update the distances of each cell.
+
+Space Complexity:
+The space complexity is O(n^2) because the code uses a 2D array to store the distances of each cell.
+
+Error Handling:
+The code does not handle errors, but it does check if the top and left cells exist before updating the distance of the current cell.
+
+Test Cases:
+
+grid = [[1, 0, 1], [0, 0, 0], [1, 0, 1]]
+Output: 2
+grid = [[1, 0, 0], [0, 0, 0], [0, 0, 0]]
+Output: 4
+grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+Output: 6
+Optimizations:
+
+The code can be optimized by using a priority queue instead of two loops to keep track of the water cells that still need to be updated.
+Another optimization is to stop updating the distances when the minimum distance is equal to the maximum distance because it's not possible to find a water cell with a larger distance.
+Alternative Solutions:
+
+A breadth-first search (BFS) algorithm can be used to solve the problem. The algorithm starts from the land cells and calculates the distances of the neighboring water cells. It repeats this process until all water cells have been visited. The time complexity of the BFS algorithm is O(n^2), but the space complexity is O(n^2) because of the queue used to keep track of the cells to be visited.
