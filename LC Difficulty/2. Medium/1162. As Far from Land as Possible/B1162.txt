@@ -1,9 +1,22 @@
+The code is an implementation of a solution to the "As Far from Land as Possible" problem. The problem statement describes a grid of cells containing only 0's and 1's, where 0 represents water and 1 represents land. The goal is to find a water cell with the maximum distance to the nearest land cell and return that distance. The distance between two cells is defined as the Manhattan distance, which is the sum of the absolute differences of the x and y coordinates.
+
+The solution uses two nested for loops to traverse the entire grid and calculate the distance of each cell from the nearest land cell. In the first pass, the code loops through all the cells from top to bottom and from left to right. For each cell that is not a land (0), the code checks the distances from the nearest land cell above it and to the left of it. If the cell exists, the code updates the distance of the current cell to be the minimum of the distances from the above and left cells plus 1.
+
+In the second pass, the code loops through all the cells from bottom to top and from right to left. For each cell that is not a land (0), the code checks the distances from the nearest land cell below it and to the right of it. If the cell exists, the code updates the distance of the current cell to be the minimum of the current distance, the distance from the below cell, and the distance from the right cell plus 1.
+
+Finally, the code loops through the entire grid again to find the maximum distance among all the cells. If the maximum distance is equal to the sum of the number of rows and columns plus 1 or 0, then the code returns -1 as it is not possible to reach a land. Otherwise, the code returns the maximum distance minus 1.
+
+
+________________________________________________________________________
+
 Overall Approach:
+
 The code implements a two-pass approach to solve the problem.
 
 The first pass traverses the grid from top to bottom and from left to right. It calculates the distance of each water cell to the nearest land in the top and left direction.
 The second pass traverses the grid from bottom to top and from right to left. It updates the distance of each water cell to be the minimum distance from the nearest land in the current direction, bottom and right direction.
 After the two-pass approach, the code traverses the grid again to find the maximum distance among all the water cells.
+
 Data Structures and Algorithms Used:
 
 2D array: To represent the grid and store the distances of each cell.
@@ -11,10 +24,13 @@ Loops: To traverse the grid and calculate the distances of each cell.
 Conditional statements: To check if the top, left, bottom, or right cells exist.
 Math.min: To calculate the minimum distance of the top, left, bottom, or right cells.
 Math.max: To calculate the maximum distance among all the water cells.
+
 Time Complexity:
+
 The time complexity is O(n^2) where n is the number of rows and columns in the grid. This is because the code uses nested loops to traverse the entire grid twice and update the distances of each cell.
 
 Space Complexity:
+
 The space complexity is O(n^2) because the code uses a 2D array to store the distances of each cell.
 
 Error Handling:
@@ -28,10 +44,101 @@ grid = [[1, 0, 0], [0, 0, 0], [0, 0, 0]]
 Output: 4
 grid = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 Output: 6
+
 Optimizations:
 
 The code can be optimized by using a priority queue instead of two loops to keep track of the water cells that still need to be updated.
 Another optimization is to stop updating the distances when the minimum distance is equal to the maximum distance because it's not possible to find a water cell with a larger distance.
+
 Alternative Solutions:
 
 A breadth-first search (BFS) algorithm can be used to solve the problem. The algorithm starts from the land cells and calculates the distances of the neighboring water cells. It repeats this process until all water cells have been visited. The time complexity of the BFS algorithm is O(n^2), but the space complexity is O(n^2) because of the queue used to keep track of the cells to be visited.
+
+
+
+__________________________________________________________
+
+
+
+Why the code need two pass?
+
+The code uses two passes because in the first pass, it calculates the distance from the closest land cell to each cell from the top to bottom and from left to right. However, in some cases, there might be a closer land cell from the bottom or from the right that is not discovered in the first pass. To handle this, the second pass is used to calculate the distance from the closest land cell to each cell from bottom to top and from right to left. In this way, the code ensures that it finds the minimum distance of the closest land cell to each cell, which is the true distance of each cell from the closest land.
+
+
+__________________________________________________________
+
+
+Mxltosa
+
+Give me the "some cases" example
+
+Consider the following example:
+
+Input: grid = [[1, 0, 0], [0, 0, 1], [0, 0, 0]]
+
+If we only make a single pass from top to bottom and from left to right, we would obtain the following grid after updating the distances:
+
+[[1, 2, 3], [2, 3, 1], [3, 4, 2]]
+
+However, after the second pass from bottom to top and from right to left, the distances would be updated to:
+
+[[1, 2, 2], [2, 2, 1], [3, 3, 2]]
+
+As we can see, the second pass updates the distances with the minimum distances from all adjacent cells, which helps to give us a more accurate representation of the distances from each cell to the nearest land.
+
+Another example could be:
+
+Input: grid = [[1, 0, 1, 0], [0, 0, 0, 0], [0, 0, 1, 0], [1, 0, 1, 0]]
+
+After the first pass, the distances would be:
+
+[[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 1], [1, 2, 1, 1]]
+
+And after the second pass:
+
+[[1, 1, 1, 1], [2, 2, 2, 2], [2, 3, 2, 1], [1, 2, 1, 1]]
+
+So, in these cases the two pass helps to find the maximum distance of a cell from a land in a more accurate way.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

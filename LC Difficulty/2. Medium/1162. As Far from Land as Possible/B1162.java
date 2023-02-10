@@ -33,6 +33,13 @@ class B1162 {
             }
         }
 
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                System.out.print(grid[i][j] + " ");
+            }
+            System.out.println();
+        }
+
         // Loop through all the cells of the grid from bottom to top and from right to left
         for (int row = rows - 1; row >= 0; row--) {
             for (int col = columns - 1; col >= 0; col--) {
@@ -56,6 +63,14 @@ class B1162 {
                 // current distance, bottom and right cells + 1
                 grid[row][col] = Math.min(grid[row][col], Math.min(bottom, right) + 1);
             }
+        }
+
+        System.out.println("-----");
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                System.out.print(grid[i][j] + " ");
+            }
+            System.out.println();
         }
 
         // Initialize the maximum distance to be the minimum integer value
