@@ -1,0 +1,87 @@
+What is end and start stand for in the code "int maxLength = 0, end = 0, start = 0;"
+
+In the code int maxLength = 0, end = 0, start = 0;, maxLength is a variable to store the length of the longest substring without repeating characters. end and start are two pointers, which keep track of the substring without repeating characters. end is the ending index of the substring and start is the starting index of the substring. These two pointers are used to traverse the string and update the maxLength whenever a longer substring without repeating characters is found.
+
+
+____________________________________________________________________________
+
+
+The code is a Java implementation of a solution to the Longest Substring Without Repeating Characters problem.
+
+The overall approach is to use two pointers, i and j, to keep track of the start and end of the current substring, respectively. A character's last appearance index is stored in an array called last, where the index of each element corresponds to the ASCII code of the character. The last array is initialized with all elements set to -1.
+
+The key data structure used in this solution is an integer array last, which stores the last appearance index of each character in the string. This allows for quick access to the information needed to determine if a character has been seen before in the current substring.
+
+The algorithm used is a two-pointer technique. Starting from j = 0, the program moves j to the right until it encounters a repeating character. The value of i is then updated to be the maximum of its current value and the last appearance index of the repeating character plus 1. This ensures that the substring remains non-repeating. The length of the current substring is calculated as j - i + 1, and the maximum length so far is stored in ans.
+
+The time complexity of this solution is O(n), where n is the length of the input string. This is because each character in the string is processed only once. The space complexity is O(1), as the size of the last array is fixed at 128, which is constant.
+
+There are no edge cases or error handling specifically implemented in this code. It is assumed that the input string conforms to the constraints specified in the problem statement, i.e., its length is between 0 and 5 * 104, and it consists of English letters, digits, symbols and spaces.
+
+To test this code, one can provide a string as input to the lengthOfLongestSubstring method and compare the output to the expected result.
+
+Potential optimizations include using a hash map instead of an array to store the last appearance index of each character, as the hash map allows for constant-time access to values while the array requires O(1) time. However, the fixed size of the character set in this problem makes the use of an array more efficient.
+
+An alternative solution is to use a sliding window approach, where the program maintains a window of characters that contains only unique characters. The window is then moved to the right until a repeating character is encountered. The size of the window can then be used to determine the length of the current non-repeating substring. The time complexity of this solution is also O(n), and the space complexity is O(k), where k is the size of the character set.
+
+
+_____________________________________________________________________________
+
+
+
+The code solves the Longest Substring Without Repeating Characters problem by using two pointers approach and a hash table to store the last position of each character.
+
+Approach:
+
+Create an array last with length 128, which stores the last position of each character in the ASCII table.
+Set the initial value of ans to 0, which represents the length of the longest substring without repeating characters.
+Set the initial value of i to 0, which represents the left boundary of the substring.
+Use a for loop with the index j to traverse the string s from the left to right.
+Within the loop, update the value of i to be the maximum of i and the last position of the current character in last plus one.
+Update the value of last at the index of the current character to be j.
+Update the value of ans to be the maximum of ans and j minus i plus one.
+Return ans as the result.
+Data structures and algorithms:
+
+Array: to store the last position of each character in the ASCII table
+Hash table: to implement the array
+Two pointers approach: to traverse the string s from the left to right and to find the longest substring without repeating characters.
+Time complexity:
+The time complexity is O(n), where n is the length of the string s, because each character in s will be processed once.
+
+Space complexity:
+The space complexity is O(1), because the size of the array last is fixed at 128, which is a constant.
+
+Edge cases and error handling:
+The code handles edge cases correctly. For example, if the input string s is empty, the code will return 0, which is the correct result.
+
+Test cases:
+The code can be tested by passing different input strings to the lengthOfLongestSubstring method and verifying the output against the expected result.
+
+Optimizations:
+The code is already optimized in terms of time and space complexity.
+
+Alternative solutions:
+There are other algorithms that can solve this problem, such as sliding window approach, dynamic programming, and others.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

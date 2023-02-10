@@ -1,9 +1,9 @@
 
-public class A0003 {
+public class A3 {
     public static void main(String[] args) {
-
+        C3 obj = new C3();
         String s = "geeksforgeeks";
-        int longestSubstringLength = B0003.lengthOfLongestSubstring(s);
+        int longestSubstringLength = obj.lengthOfLongestSubstring(s);
         System.out.println("The length of the longest substring without repeating characters in the string " + s + " is: " + longestSubstringLength);
     }
 }
