@@ -1,4 +1,4 @@
-public class B0006 {
+public class C6 {
 
     public static String convert(String s, int numRows) {
         if (numRows == 1) {
