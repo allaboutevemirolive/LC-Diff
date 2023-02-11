@@ -1,5 +1,4 @@
-public class B12 {
-
+class B12 {
     public String intToRoman(int num) {
         StringBuilder sb = new StringBuilder();
         while (num >= 1000) {
