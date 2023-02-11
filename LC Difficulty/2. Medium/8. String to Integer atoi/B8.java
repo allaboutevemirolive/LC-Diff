@@ -1,5 +1,4 @@
 class B8 {
-    
     public int myAtoi(String str) {
         // Initialize `index` to zero and `n` to the length of the string
         int n = str.length();
