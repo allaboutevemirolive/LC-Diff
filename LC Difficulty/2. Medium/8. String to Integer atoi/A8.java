@@ -1,8 +1,8 @@
-public class A0008 {
+public class A8 {
     public static void main(String[] args) {
-        
+        B8 obj = new B8();
         String str = "41-93 with words";
-        int val = B0008.myAtoi(str);
+        int val = obj.myAtoi(str);
         System.out.println("Result: " + val);
     }
 }

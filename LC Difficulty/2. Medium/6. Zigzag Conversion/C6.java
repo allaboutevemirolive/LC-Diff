@@ -1,29 +1,36 @@
-public class C6 {
+class C6 {
 
-    public static String convert(String s, int numRows) {
-        if (numRows == 1) {
-            return s;
+    public String convert(String inputString, int numOfRows) {
+        if (numOfRows == 1) {
+            return inputString;
         }
 
-        StringBuilder sb = new StringBuilder();
-        int step = 2 * (numRows - 1);
-        for (int i = 0; i < s.length(); i += step) {
-            sb.append(s.charAt(i));
+        StringBuilder outputString = new StringBuilder();
+        int step = 2 * (numOfRows - 1);
+
+        // Adding characters from the first row
+        for (int firstRowIndex = 0; firstRowIndex < inputString.length(); firstRowIndex += step) {
+            outputString.append(inputString.charAt(firstRowIndex));
         }
-        for (int i = 1; i < numRows - 1; i++) {
-            int j = i;
-            boolean flag = true;
-            while (j < s.length()) {
-                sb.append(s.charAt(j));
-                j += flag ? step - 2 * i : 2 * i;
-                flag = !flag;
+
+        // Adding characters from the middle rows
+        for (int middleRowIndex = 1; middleRowIndex < numOfRows - 1; middleRowIndex++) {
+            int characterIndex = middleRowIndex;
+            boolean isFirstStep = true;
+            while (characterIndex < inputString.length()) {
+                outputString.append(inputString.charAt(characterIndex));
+                // Determine step size to get the next character
+                int stepSize = isFirstStep ? step - 2 * middleRowIndex : 2 * middleRowIndex;
+                characterIndex += stepSize;
+                isFirstStep = !isFirstStep;
             }
         }
-        for (int i = numRows - 1; i < s.length(); i += step) {
-            sb.append(s.charAt(i));
+
+        // Adding characters from the last row
+        for (int lastRowIndex = numOfRows - 1; lastRowIndex < inputString.length(); lastRowIndex += step) {
+            outputString.append(inputString.charAt(lastRowIndex));
         }
 
-        return sb.toString();
+        return outputString.toString();
     }
-
 }
