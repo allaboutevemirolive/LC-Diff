@@ -1,55 +1,47 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import java.util.*;
 public class C15 {
-    
-    public static List<List<Integer>> threeSum(int[] nums) {
+    public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        if (nums == null || nums.length < 3) {
-            return result;
-        }
-
-        // Sort the array in ascending order
         Arrays.sort(nums);
 
-        // Fix the first element, and find the other two elements using two pointers
-        for (int i = 0; i < nums.length - 2; i++) {
-            // Skip duplicate first elements
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
+        // loop through the nums array starting from 0 to the second to last element
+        for (int currentIndex = 0; currentIndex < nums.length - 2; currentIndex++) {
+            // check if the current element is unique compared to the previous one
+            if (currentIndex == 0 || nums[currentIndex] != nums[currentIndex - 1]) {
+                int leftPointer = currentIndex + 1;
+                int rightPointer = nums.length - 1;
+                int targetSum = 0 - nums[currentIndex];
 
-            // Set the two pointers to the next elements after i
-            int j = i + 1;
-            int k = nums.length - 1;
+                // while the left and right pointers have not crossed over each other
+                while (leftPointer < rightPointer) {
+                    // if the sum of the left and right pointer elements is equal to the target sum
+                    if (nums[leftPointer] + nums[rightPointer] == targetSum) {
+                        // add the triplet to the result list
+                        result.add(Arrays.asList(nums[currentIndex], nums[leftPointer], nums[rightPointer]));
 
-            while (j < k) {
-                int sum = nums[i] + nums[j] + nums[k];
-                if (sum == 0) {
-                    result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                        // move the left pointer to the right until a unique number is found
+                        while (leftPointer < rightPointer && nums[leftPointer] == nums[leftPointer + 1]) {
+                            leftPointer++;
+                        }
+                        // move the right pointer to the left until a unique number is found
+                        while (leftPointer < rightPointer && nums[rightPointer] == nums[rightPointer - 1]) {
+                            rightPointer--;
+                        }
 
-                    // Skip duplicate second and third elements
-                    while (j < k && nums[j] == nums[j + 1]) {
-                        j++;
+                        leftPointer++;
+                        rightPointer--;
                     }
-                    while (j < k && nums[k] == nums[k - 1]) {
-                        k--;
+                    // if the sum of the left and right pointer elements is less than the target sum
+                    else if (nums[leftPointer] + nums[rightPointer] < targetSum) {
+                        leftPointer++;
                     }
-
-                    // Move the two pointers to the next elements
-                    j++;
-                    k--;
-                } else if (sum < 0) {
-                    // The sum is too small, move the second pointer to the next element
-                    j++;
-                } else {
-                    // The sum is too large, move the third pointer to the previous element
-                    k--;
+                    // if the sum of the left and right pointer elements is greater than the target sum
+                    else {
+                        rightPointer--;
+                    }
                 }
             }
         }
-
         return result;
     }
 }
