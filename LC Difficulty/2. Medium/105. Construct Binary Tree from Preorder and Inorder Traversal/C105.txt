@@ -1,0 +1,15 @@
+What is "var" in the code
+
+var is a keyword in Java that was introduced in Java 10 as part of the local variable type inference feature. It allows you to declare a local variable without specifying its type explicitly, and the type is inferred based on the value that is assigned to it.
+
+For example, instead of writing:
+
+String message = "Hello, world!";
+
+You can write:
+
+var message = "Hello, world!";
+
+In this case, the type of the message variable is inferred to be String based on the value that is assigned to it.
+
+Note that var can only be used for local variable declarations, and not for instance or class variables, method parameters, or return types. Also, it is still recommended to use explicit type declarations when they improve the readability and maintainability of the code.
