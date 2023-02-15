@@ -1,0 +1,40 @@
+The output in the terminal is 
+
+
+
+0 -3 -10 9 5 
+
+
+
+But the output in the question is
+
+0,-3,9,-10,null,5
+
+
+
+Why is this happen? Am i missing something?
+
+
+The output format in the terminal and the expected output in the question are different. 
+
+The expected output in the question is in the form of a binary tree, where each node has a left and right child or a null value if it does not have a child. 
+
+The output in the terminal is in the form of a space-separated list of node values in the order of an inorder traversal of the tree.
+
+To better match the expected output in the question, you could modify your main function to output the binary tree in a format that shows the structure of the tree, using null for missing child nodes. Here's an example implementation that outputs the tree in the expected format:
+
+public static void printTree(T109 root) {
+    if (root == null) {
+        System.out.print("null ");
+        return;
+    }
+    System.out.print(root.val + " ");
+    printTree(root.left);
+    printTree(root.right);
+}
+
+
+This implementation recursively traverses the tree in preorder, printing the value of each node followed by its left and right subtrees, each enclosed in a set of brackets. If a subtree is null, it is printed as "null". When this function is called on the root of the tree, it will output the tree in the expected format.
+
+
+

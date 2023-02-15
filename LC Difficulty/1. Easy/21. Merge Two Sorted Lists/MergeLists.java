@@ -1,13 +1,13 @@
 
 class MergeLists {
 
-    ListNode head;
+    L21 head;
 
-    public void addToTheLast(ListNode node) {
+    public void addToTheLast(L21 node) {
         if (head == null) {
             head = node;
         } else {
-            ListNode temp = head;
+            L21 temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
@@ -16,7 +16,7 @@ class MergeLists {
     }
 
     void printLists() {
-        ListNode temp = head;
+        L21 temp = head;
         while (temp != null) {
             System.out.print(temp.val + " ");
             temp = temp.next;

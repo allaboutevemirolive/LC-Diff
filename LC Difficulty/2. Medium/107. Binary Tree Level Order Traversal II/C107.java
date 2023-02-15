@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Queue;
 
 // BFS
-class Solution {
+class C107 {
     public List<List<Integer>> levelOrderBottom(T107 root) {
         // Initialize an empty list to hold the results
         List<List<Integer>> results = new ArrayList<>();

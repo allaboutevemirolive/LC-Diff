@@ -1,5 +1,5 @@
 class C92 {
-    public ListNode reverseBetween(ListNode head, int left, int right) {
+    public L92 reverseBetween(L92 head, int left, int right) {
         if (left == 1) return reverseN(head, right);
 
         head.next = reverseBetween(head.next, left - 1, right - 1);
@@ -7,11 +7,11 @@ class C92 {
         return head;
     }
 
-    private ListNode reverseN(ListNode head, int n) {
+    private L92 reverseN(L92 head, int n) {
         if (n == 1) return head;
 
-        ListNode newHead = reverseN(head.next, n - 1);
-        ListNode headNext = head.next;
+        L92 newHead = reverseN(head.next, n - 1);
+        L92 headNext = head.next;
         head.next = headNext.next;
         headNext.next = head;
 

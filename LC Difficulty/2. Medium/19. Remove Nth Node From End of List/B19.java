@@ -1,10 +1,10 @@
-public class B0019 {
+public class B19 {
     
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode(0);
+    public static L19 removeNthFromEnd(L19 head, int n) {
+        L19 dummy = new L19(0);
         dummy.next = head;
-        ListNode first = dummy;
-        ListNode second = dummy;
+        L19 first = dummy;
+        L19 second = dummy;
         // Advances first pointer so that the gap between first and second is n nodes apart
         for (int i = 1; i <= n + 1; i++) {
             first = first.next;

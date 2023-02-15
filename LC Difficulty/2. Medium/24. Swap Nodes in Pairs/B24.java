@@ -1,11 +1,11 @@
-public class B0024 {
+public class B24 {
 
-    public ListNode swapPairs(ListNode head) {
+    public L24 swapPairs(L24 head) {
         if (head == null || head.next == null) {
             return head;
         }
 
-        ListNode second = head.next;
+        L24 second = head.next;
         head.next = swapPairs(second.next);
         second.next = head;
         return second;

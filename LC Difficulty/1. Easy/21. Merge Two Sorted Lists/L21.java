@@ -1,9 +1,9 @@
 
-class ListNode {
+class L21 {
     int val;
-    ListNode next;
+    L21 next;
 
-    ListNode(int d) {
+    L21(int d) {
         val = d;
         next = null;
     }

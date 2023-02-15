@@ -2,24 +2,24 @@ import java.util.LinkedList;
 import java.util.List;
 
 class D95 {
-    public List<TreeNode> generateTrees(int n) {
+    public List<T95> generateTrees(int n) {
         return generateSubtrees(1, n);
     }
 
-    private List<TreeNode> generateSubtrees(int start, int end) {
-        List<TreeNode> result = new LinkedList<>();
+    private List<T95> generateSubtrees(int start, int end) {
+        List<T95> result = new LinkedList<>();
         if (start > end) {
             result.add(null);
             return result;
         }
 
         for (int i = start; i <= end; i++) {
-            List<TreeNode> leftSubtrees = generateSubtrees(start, i - 1);
-            List<TreeNode> rightSubtrees = generateSubtrees(i + 1, end);
+            List<T95> leftSubtrees = generateSubtrees(start, i - 1);
+            List<T95> rightSubtrees = generateSubtrees(i + 1, end);
 
-            for (TreeNode left : leftSubtrees) {
-                for (TreeNode right : rightSubtrees) {
-                    TreeNode root = new TreeNode(i);
+            for (T95 left : leftSubtrees) {
+                for (T95 right : rightSubtrees) {
+                    T95 root = new T95(i);
                     root.left = left;
                     root.right = right;
                     result.add(root);

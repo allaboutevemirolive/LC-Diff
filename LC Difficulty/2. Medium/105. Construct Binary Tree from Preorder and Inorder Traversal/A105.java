@@ -9,13 +9,16 @@ public class A105 {
         // print the inorder traversal of the constructed tree for verification
         printInorder(root);
     }
-    
+
     private static void printInorder(T105 node) {
-        if (node != null) {
-            printInorder(node.left);
-            System.out.print(node.val + " ");
-            printInorder(node.right);
+        if (node == null) {
+            System.out.print("null ");
+            return;
         }
+        System.out.print(node.val + " ");
+        printInorder(node.left);
+        printInorder(node.right);
     }
-    
+
+
 }

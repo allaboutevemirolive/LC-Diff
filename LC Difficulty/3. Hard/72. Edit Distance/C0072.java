@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class B0072 {
+class C0072 {
     public int minDistance(String word1, String word2) {
         int n = word1.length();
         int m = word2.length();

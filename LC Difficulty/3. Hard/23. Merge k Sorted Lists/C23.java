@@ -1,16 +1,16 @@
 class C23 {
-    public ListNode mergeKLists(ListNode[] lists) {
+    public L23 mergeKLists(L23[] lists) {
         if (lists.length == 0) {
             return null;
         }
         return divide(lists, 0, lists.length - 1);
     }
     
-    public ListNode divide(ListNode[] lists, int start, int end) {
+    public L23 divide(L23[] lists, int start, int end) {
         if (start < end) {
             int mid = (start + end) / 2;
-            ListNode left = divide(lists, start, mid);
-            ListNode right = divide(lists, mid + 1, end);
+            L23 left = divide(lists, start, mid);
+            L23 right = divide(lists, mid + 1, end);
             if (left == null) {
                 return right;
             } else if (right == null) {
@@ -23,8 +23,8 @@ class C23 {
         }
     }
     
-    public ListNode merge(ListNode left, ListNode right) {
-        ListNode result = null;
+    public L23 merge(L23 left, L23 right) {
+        L23 result = null;
         if (left.val < right.val) {
             result = left;
             left = left.next;
@@ -32,7 +32,7 @@ class C23 {
             result = right;
             right = right.next;
         }
-        ListNode finalResult = result;
+        L23 finalResult = result;
 
         while(left != null || right != null) {
             if (left == null) {

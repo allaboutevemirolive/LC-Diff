@@ -4,17 +4,17 @@ class A95 {
     public static void main(String[] args) {
         int numOfNodes = 3;
         C95 obj = new C95();
-        List<TreeNode> result = obj.generateTrees(numOfNodes);
+        List<T95> result = obj.generateTrees(numOfNodes);
 
         System.out.println("Input: n = " + numOfNodes);
         System.out.println("Output: ");
-        for (TreeNode root : result) {
+        for (T95 root : result) {
             printTree(root);
             System.out.println();
         }
     }
 
-    private static void printTree(TreeNode root) {
+    private static void printTree(T95 root) {
         if (root == null) {
             System.out.print("null ");
             return;

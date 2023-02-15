@@ -3,7 +3,7 @@ import java.util.List;
 
 class C95 {
     // Function to generate all unique BST's given n nodes
-    public List<TreeNode> generateTrees(int n) {
+    public List<T95> generateTrees(int n) {
         // If n is 0, return an empty list
         if (n == 0) {
             return new ArrayList<>();
@@ -13,9 +13,9 @@ class C95 {
     }
 
     // Helper function to generate unique BST's
-    private List<TreeNode> generateUniqueBST(int start, int end) {
+    private List<T95> generateUniqueBST(int start, int end) {
         // Initialize the list to store the generated BST's
-        List<TreeNode> uniqueBSTList = new ArrayList<>();
+        List<T95> uniqueBSTList = new ArrayList<>();
         // If start is greater than end, add null to the list and return
         if (start > end) {
             uniqueBSTList.add(null);
@@ -25,13 +25,13 @@ class C95 {
         // Loop from start to end
         for (int i = start; i <= end; i++) {
             // Generate BST's with left subtree using values from start to i - 1
-            List<TreeNode> leftBSTList = generateUniqueBST(start, i - 1);
+            List<T95> leftBSTList = generateUniqueBST(start, i - 1);
             // Generate BST's with right subtree using values from i + 1 to end
-            List<TreeNode> rightBSTList = generateUniqueBST(i + 1, end);
+            List<T95> rightBSTList = generateUniqueBST(i + 1, end);
             // Loop through each left and right BST, and generate the current BST by combining them
-            for (TreeNode leftBST : leftBSTList) {
-                for (TreeNode rightBST : rightBSTList) {
-                    TreeNode currBST = new TreeNode(i);
+            for (T95 leftBST : leftBSTList) {
+                for (T95 rightBST : rightBSTList) {
+                    T95 currBST = new T95(i);
                     // Set the left and right child of the current BST
                     currBST.left = leftBST;
                     currBST.right = rightBST;

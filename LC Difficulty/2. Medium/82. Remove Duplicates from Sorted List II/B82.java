@@ -1,15 +1,15 @@
 class B82 {
-    public ListNode deleteDuplicates(ListNode head) {
+    public L82 deleteDuplicates(L82 head) {
         // Edge case: return the head if it is null or the list only has one node
         if (head == null || head.next == null) {
             return head;
         }
 
         // Create a dummy node to keep track of the previous node in the linked list
-        ListNode dummy = new ListNode(-1);
+        L82 dummy = new L82(-1);
         dummy.next = head;
-        ListNode prev = dummy;
-        ListNode curr = head;
+        L82 prev = dummy;
+        L82 curr = head;
 
         // Iterate through the linked list
         while (curr != null) {

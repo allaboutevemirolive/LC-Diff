@@ -1,7 +1,7 @@
 
 class B0021 {
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public L21 mergeTwoLists(L21 l1, L21 l2) {
         if (l1 == null)
             return l2;
         if (l2 == null)

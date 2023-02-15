@@ -2,19 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 class B95 {
-    List<TreeNode>[][] memo;
+    List<T95>[][] memo;
 
     // main function which returns all possible binary trees using nodes from 1 to numOfNodes
-    public List<TreeNode> generateTrees(int numOfNodes) {
+    public List<T95> generateTrees(int numOfNodes) {
         // memoization array to store previously computed results to save time
-        memo = (List<TreeNode>[][]) new List[numOfNodes + 1][numOfNodes + 1];
+        memo = (List<T95>[][]) new List[numOfNodes + 1][numOfNodes + 1];
         // call helper function to generate trees in the range 1 to numOfNodes
         return generateTreesInRange(1, numOfNodes);
     }
 
     // helper function to generate trees in the range startNode to endNode
-    private List<TreeNode> generateTreesInRange(int startNode, int endNode) {
-        List<TreeNode> result = new ArrayList<TreeNode>();
+    private List<T95> generateTreesInRange(int startNode, int endNode) {
+        List<T95> result = new ArrayList<T95>();
         // if startNode is greater than endNode, then return a list with single null
         // node as this range can't have any node
         if (startNode > endNode) {
@@ -31,13 +31,13 @@ class B95 {
         // loop through all nodes in the range startNode to endNode to find the root of each tree
         for (int i = startNode; i <= endNode; i++) {
             // generate all left subtrees for node i
-            List<TreeNode> leftSubtrees = generateTreesInRange(startNode, i - 1);
+            List<T95> leftSubtrees = generateTreesInRange(startNode, i - 1);
             // generate all right subtrees for node i
-            List<TreeNode> rightSubtrees = generateTreesInRange(i + 1, endNode);
+            List<T95> rightSubtrees = generateTreesInRange(i + 1, endNode);
             // for each combination of left and right subtrees, create a new tree
-            for (TreeNode left : leftSubtrees) {
-                for (TreeNode right : rightSubtrees) {
-                    TreeNode root = new TreeNode(i);
+            for (T95 left : leftSubtrees) {
+                for (T95 right : rightSubtrees) {
+                    T95 root = new T95(i);
                     root.left = left;
                     root.right = right;
                     result.add(root);

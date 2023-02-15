@@ -1,7 +1,7 @@
 public class B86 {
-    public ListNode partition(ListNode head, int x) {
-        ListNode dummy1 = new ListNode(0), dummy2 = new ListNode(0); // create two dummy nodes
-        ListNode curr1 = dummy1, curr2 = dummy2; // create two pointers to traverse the two partitions
+    public L86 partition(L86 head, int x) {
+        L86 dummy1 = new L86(0), dummy2 = new L86(0); // create two dummy nodes
+        L86 curr1 = dummy1, curr2 = dummy2; // create two pointers to traverse the two partitions
 
         // traverse the list
         while (head != null) {

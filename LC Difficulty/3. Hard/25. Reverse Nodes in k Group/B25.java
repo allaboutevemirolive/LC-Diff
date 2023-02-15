@@ -1,9 +1,9 @@
 public class B25 {
 
-    public ListNode reverseKGroup(ListNode head, int k) {
+    public L25 reverseKGroup(L25 head, int k) {
         // Initialize a pointer curr to the head of the list
         // Initialize a variable count to 0
-        ListNode curr = head;
+        L25 curr = head;
         int count = 0;
         
         // Iterate through the list while curr is not null 
@@ -24,7 +24,7 @@ public class B25 {
             // Iterate through the group of k nodes, reversing their order
             while (count > 0) {
                 // Use a temporary variable temp to store the next node
-                ListNode temp = head.next;
+                L25 temp = head.next;
                 // Update the next pointer of the current node to point to curr
                 head.next = curr;
                 // Update curr to be the current node

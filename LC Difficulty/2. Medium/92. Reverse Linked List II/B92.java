@@ -1,15 +1,15 @@
 class B92 {
 
-    public ListNode reverseBetween(ListNode head, int m, int n) {
+    public L92 reverseBetween(L92 head, int m, int n) {
         if (head == null) return null; // return null if head is null
-        ListNode dummy = new ListNode(0); // create a dummy node as placeholder for new head
+        L92 dummy = new L92(0); // create a dummy node as placeholder for new head
         dummy.next = head; // set dummy's next as the original head
-        ListNode pre = dummy; // pointer to keep track of node before reversal
+        L92 pre = dummy; // pointer to keep track of node before reversal
         for (int i = 0; i < m - 1; i++) // iterate m-1 times
             pre = pre.next; //update pre to be the node before the start of reversal
 
-        ListNode start = pre.next; // pointer to the start of reversal
-        ListNode then = start.next; // pointer to the node after the start of reversal
+        L92 start = pre.next; // pointer to the start of reversal
+        L92 then = start.next; // pointer to the node after the start of reversal
 
         for (int i = 0; i < n - m; i++) {
             start.next = then.next; // set start's next as the node after then
