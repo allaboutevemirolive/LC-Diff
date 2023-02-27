@@ -1,12 +1,10 @@
-
 public class A23 {
 
     public static void main(String[] args) {
         int k = 3; // Number of linked lists
         // int n = 4; // Number of elements in each list
 
-        // an array of pointers storing the head L23s
-        // of the linked lists
+        // an array of pointers storing the head L23s of the linked lists
         L23[] arr = new L23[k];
 
         arr[0] = new L23(1);
