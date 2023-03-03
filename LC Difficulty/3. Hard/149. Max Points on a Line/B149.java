@@ -42,6 +42,7 @@ class B142 {
             }
             // Otherwise, calculate the slope of the line that passes through the two points
             else {
+                // Best practice is to cast this expression with (double). You can also leave it.
                 slope = (double) (points[i][1] - y) / (points[i][0] - x);
             }
 
