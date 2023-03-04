@@ -1,0 +1,47 @@
+The code defines a class B115 which contains a public method numDistinct that takes two string arguments s and t. The method returns an integer, which represents the number of distinct subsequences of string s that equal string t.
+
+The algorithm for computing the number of distinct subsequences is implemented using dynamic programming. It creates two arrays of integers, dp and temp, each of length tLength + 1, where tLength is the length of string t.
+
+Initially, the first value of both arrays is set to 1. The array dp will store the number of distinct subsequences of s that equal t. The array temp is used to help update the values in dp.
+
+Then, the code loops through each character in string s using a for loop. Within this loop, it loops through each character in string t using another for loop. For each character in s, it checks if it matches the current character in t. If it does, it updates the value of dp at index j by adding the value of temp at index j-1. If it doesn't match, it simply updates the value of temp at index j-1 with the previous value of dp at index j-1.
+
+Finally, the method returns the final value of dp at index tLength, which represents the number of distinct subsequences of s that equal t.
+
+In summary, the code above provides an implementation of the dynamic programming algorithm for computing the number of distinct subsequences of a string s that equal another string t. The algorithm has a time complexity of O(nm), where n and m are the lengths of the strings s and t, respectively.
+
+
+_______________________________________________
+
+
+The overall approach of this code is to count the number of distinct subsequences of string s that are equal to string t. A subsequence of s is a sequence of characters from s that may not be contiguous, but must appear in the same order as they do in t.
+
+The key algorithm used in this code is dynamic programming. The code builds a 2D array to store the intermediate results and calculates the final result by updating the array.
+
+The key data structures used in this code are two arrays of integers: dp and temp. dp stores the number of distinct subsequences of s that are equal to t, while temp is used to help update dp.
+
+The time complexity of this code is O(mn), where m and n are the lengths of strings s and t, respectively. The space complexity is O(n), which is the length of the target string t.
+
+The code handles the edge cases where the length of s or t is less than or equal to 1. If either string is empty, the code returns 0.
+
+Test cases:
+
+Input: s = "rabbbit", t = "rabbit"
+Output: 3
+Explanation: There are 3 distinct subsequences of s that are equal to t: "rabbit", "rabbit", and "rabbit".
+
+Input: s = "babgbag", t = "bag"
+Output: 5
+Explanation: There are 5 distinct subsequences of s that are equal to t: "bag", "bag", "bag", "bag", and "bag".
+
+Input: s = "", t = "abc"
+Output: 0
+Explanation: The empty string cannot contain any subsequences of "abc".
+
+Input: s = "abc", t = ""
+Output: 1
+Explanation: The empty string is a subsequence of any string.
+
+Optimizations: The code can be optimized by using a 1D array instead of a 2D array to store intermediate results.
+
+Alternative solutions: Another approach to solve this problem is using recursive algorithms such as backtracking or memoization. However, dynamic programming is more efficient in this case.

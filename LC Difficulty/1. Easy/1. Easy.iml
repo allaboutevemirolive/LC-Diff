@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/1. Two Sum" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/1137. N th Tribonacci Number" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/13. Roman to Integer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/14. Longest Common Prefix" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/20. Valid Parentheses" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/21. Merge Two Sorted Lists" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/26. Remove Duplicates from Sorted Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/27. Remove Element" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/35. Search Insert Position" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/58. Length of Last Word" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/9. Palindrome Number" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
