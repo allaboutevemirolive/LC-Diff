@@ -20,7 +20,7 @@ public class B164 {
             return 0;
         }
 
-        // Calculate the bucket size and the number of buckets
+        // The code needs to figure out how many buckets to use and how big each bucket should be
         int bucketSize = (int) Math.ceil((double) (max - min) / (nums.length - 1));
         int numberOfBuckets = (max - min) / bucketSize + 1;
 
