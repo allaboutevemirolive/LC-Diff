@@ -6,17 +6,19 @@ class B188 {
         int[] sell = new int[k];
         // keep track of the maximum profit that can be made after buying a stock
         int[] buy = new int[k];
-
         // If initialize to 0, we might miss out on some possible profits if the actual maximum profit value is negative.
         Arrays.fill(buy, Integer.MIN_VALUE);
 
         for (int value : prices) {
             for (int i = k - 1; i >= 0; i--) {
-                // 'calculate' the maximum profit that can be made by 'buying' the stock on the ith transaction
+                // We calculate pure profit from our previous sell
+                // When i = 0, the code calculates the maximum profit for the first transaction based on the current buy value only. 
+                // This is because there are no previous transactions to consider.
                 int profit = (i > 0) ? sell[i - 1] : 0;
-                // 'updates' the maximum profit that can be made after 'buying' the stock on the ith transaction
+                // Calculate maximum profit if we buy stock (either zero or negative sales)
                 buy[i] = Math.max(buy[i], profit - value);
-                // 'updates' the maximum profit that can be made after 'selling' a stock on the ith transaction
+                // Calculate maximum profit if we sell stock (either zero or positive sales)
+                // Only calculate if current value is bigger than previous value
                 sell[i] = Math.max(sell[i], buy[i] + value);
             }
         }
