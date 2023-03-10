@@ -40,6 +40,7 @@
       <sourceFolder url="file://$MODULE_DIR$/188. Best Time to Buy and Sell Stock IV" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/218. The Skyline Problem" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/212. Word Search II" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/220. Contains Duplicate III" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
