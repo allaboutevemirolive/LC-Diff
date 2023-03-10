@@ -1,51 +1,37 @@
 class B224 {
-    private int currentIndex;
+    private int indexCurr;
 
     public int calculate(String s) {
-        // Initialize the current index to 0 and start evaluating the expression.
-        currentIndex = 0;
+        indexCurr = 0;
         return calculateExpression(s);
     }
 
     private int calculateExpression(String s) {
-		// currentSign will determine whether current number is positive or negative integer
-		// (currentSign == + ) = 1
-		// (currentSign == - ) = -1
-		// -1 will determine if currentNumber should be subtract or not by ( -1 * currentNumber)
-        int result = 0, currentNumber = 0, currentSign = 1;
-        // Iterate through the string until the end or a closing bracket is found.
-        while (currentIndex < s.length()) {
+        // signCurr will determine whether current number is positive or negative integer
+        int result = 0, numberCurr = 0, signCurr = 1;
+        while (indexCurr < s.length()) {
             // Get the current character.
-            char currentChar = s.charAt(currentIndex++);
-            // If the current character is a digit, 
-            // - add it to the current number.
-            if (currentChar >= '0' && currentChar <= '9') {
-				// Convert string to number and store it in temporary variable
-                currentNumber = currentNumber * 10 + currentChar - '0';
-            }
-            // If the current character is an opening bracket, 
-            // - evaluate the expression inside the bracket recursively.
-            else if (currentChar == '(') {
-                currentNumber = calculateExpression(s);
-            }
-            // If the current character is a closing bracket, 
-            // - calculate result by adding currentNumber(positive or negative) to it
-            else if (currentChar == ')') {
-                return result + (currentSign * currentNumber);
-            }
-            // If the current character is a plus or minus sign, 
-            // - add the currentNumber(positive or negative) to the result and 
-            // - update the currentNumber and currentSign accordingly.
-            else if (currentChar == '+' || currentChar == '-') {
-                // +=  cocentenate old result with new result
-				// =   overwrite old result
-				result += currentSign * currentNumber;
-				// Reset temporary variable so it can store new number
-                currentNumber = 0;
-                currentSign = (currentChar == '-') ? -1 : 1;
+            char characterCurr = s.charAt(indexCurr++);
+            if (characterCurr >= '0' && characterCurr <= '9') {
+                // Convert string to number and 
+                // add it to the numberCurr and
+                // store it in temporary variable ( 0 )
+                numberCurr = numberCurr * 10 + characterCurr - '0';
+            } else if (characterCurr == '(') {
+                // evaluate the expression inside the bracket recursively.
+                numberCurr = calculateExpression(s);
+            } else if (characterCurr == ')') {
+                // calculate the "completed bracket" by adding numberCurr(positive or negative) to it
+                return result + (signCurr * numberCurr);
+            } else if (characterCurr == '+' || characterCurr == '-') {
+				// Calculate numberCurr with old signCurr
+                result += signCurr * numberCurr;
+				// Reset variable so it can store next number in (currentChar >= '0' && currentChar <= '9')
+                numberCurr = 0;
+				// Update new signCurr to calculate the next new numberCurr
+                signCurr = (characterCurr == '-') ? -1 : 1;
             }
         }
-        // Add the last number to the result and return it.
-        return result + currentSign * currentNumber;
+        return result + signCurr * numberCurr;
     }
 }
