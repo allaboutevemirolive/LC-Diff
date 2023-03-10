@@ -17,20 +17,25 @@ class B224 {
         while (currentIndex < s.length()) {
             // Get the current character.
             char currentChar = s.charAt(currentIndex++);
-            // If the current character is a digit, add it to the current number.
+            // If the current character is a digit, 
+            // - add it to the current number.
             if (currentChar >= '0' && currentChar <= '9') {
 				// Convert string to number and store it in temporary variable
                 currentNumber = currentNumber * 10 + currentChar - '0';
             }
-            // If the current character is an opening bracket, evaluate the expression inside the bracket recursively.
+            // If the current character is an opening bracket, 
+            // - evaluate the expression inside the bracket recursively.
             else if (currentChar == '(') {
                 currentNumber = calculateExpression(s);
             }
-            // If the current character is a closing bracket, return the current result plus the current sign times the current number.
+            // If the current character is a closing bracket, 
+            // - calculate result by adding currentNumber(positive or negative) to it
             else if (currentChar == ')') {
                 return result + (currentSign * currentNumber);
             }
-            // If the current character is a plus or minus sign, add the current number to the result and update the current sign and number accordingly.
+            // If the current character is a plus or minus sign, 
+            // - add the currentNumber(positive or negative) to the result and 
+            // - update the currentNumber and currentSign accordingly.
             else if (currentChar == '+' || currentChar == '-') {
                 // +=  cocentenate old result with new result
 				// =   overwrite old result
