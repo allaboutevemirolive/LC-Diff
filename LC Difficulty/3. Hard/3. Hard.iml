@@ -16,8 +16,17 @@
       <sourceFolder url="file://$MODULE_DIR$/154. Find Minimum in Rotated Sorted Array II" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/164. Maximum Gap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/174. Dungeon Game" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/188. Best Time to Buy and Sell Stock IV" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/212. Word Search II" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/214. Shortest Palindrome" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/218. The Skyline Problem" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/220. Contains Duplicate III" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/224. Basic Calculator" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/23. Merge k Sorted Lists" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/233. Number of Digit One" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/239. Sliding Window Maximum" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/25. Reverse Nodes in k Group" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/273. Integer to English Words" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/30. Substring with Concatenation of All Words" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/32. Longest Valid Parentheses" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/37. Sudoku Solver" isTestSource="false" />
@@ -37,10 +46,6 @@
       <sourceFolder url="file://$MODULE_DIR$/84. Largest Rectangle in Histogram" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/85. Maximal Rectangle" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/87. Scramble String" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/188. Best Time to Buy and Sell Stock IV" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/218. The Skyline Problem" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/212. Word Search II" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/220. Contains Duplicate III" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

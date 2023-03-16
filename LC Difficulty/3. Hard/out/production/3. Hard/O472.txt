@@ -1,0 +1,45 @@
+This code provides a solution to find all the concatenated words in a given dictionary of words represented by an input array of strings.
+
+Overall approach or strategy:
+
+The code uses a HashSet to store all the words in the input array, and an ArrayList to store the concatenated words that are found. It first iterates through the input array of words and adds all non-empty words to the HashSet, while keeping track of the minimum length of any word in the dictionary. Then it iterates through the input array of words again and calls the private concat method for each word to check if it is a concatenation of other words in the dictionary.
+
+Key data structures and algorithms used:
+
+HashSet: used to store all the words in the input array and check if a substring of the current word is present in the dictionary.
+ArrayList: used to store the concatenated words that are found.
+Recursion: used to check if a substring of the current word is a concatenation of other words in the dictionary.
+
+Time and space complexity:
+
+The time complexity of the code is O(n * m^2) where n is the number of words in the input array and m is the maximum length of any word in the input array. The space complexity is O(n) where n is the number of words in the input array.
+
+Edge cases and error handling:
+
+Empty words in the input array are ignored and not added to the HashSet.
+If the input array is empty or contains only empty words, an empty list is returned.
+
+Test cases:
+
+Test the code with an input array of words containing concatenated words, and ensure that the output list contains all the concatenated words
+Test the code with an input array of words containing non-concatenated words, and ensure that the output list is empty
+Test the code with an empty input array, and ensure that an empty list is returned
+
+Optimizations:
+
+To improve the time complexity, we could use a Trie data structure to store the dictionary of words instead of a HashSet, which would enable us to search for a substring in O(m) time where m is the length of the substring.
+
+Alternative solutions:
+
+A dynamic programming approach could be used to find all the concatenated words in a dictionary.
+
+A backtracking approach could also be used to find all the concatenated words in a dictionary.
+
+Using a Trie data structure as mentioned above could also be an alternative solution.
+
+
+
+
+
+
+
