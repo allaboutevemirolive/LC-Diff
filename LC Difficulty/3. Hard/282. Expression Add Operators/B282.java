@@ -39,6 +39,9 @@ class B282 {
 
         for (int i = 0; i < len; i++) {
             // Convert the current char to int current Number
+            // for example, if the input number is 105, we will generate expressions starting from 1, 10, and 105
+            // this is to avoid cases like 1 + 05 = 6
+            // This line will generate every possible combination of the input number
             currNum = currNum * 10 + charArr[i] - '0';  
             // add the current character to the expArr array
             expArr[expPtr++] = charArr[i];  
@@ -53,15 +56,14 @@ class B282 {
     }
 
     private void helper(int charPtr, int expPtr, long curr, long prev) {
-        // Set a rule to filter the valid expressions
-        // If character pointer is equal to the length of the input number
+        // Set the limit of recursion to the length of the input number
         if (charPtr == len) {    
             // if the current sum is equal to the target
             if (curr + prev == target) {   
                 // add the expression to the res list
                 res.add(new String(expArr, 0, expPtr));  
             }
-            // return from the current recursive call
+            // exit the recursion
             return;
         }
 
