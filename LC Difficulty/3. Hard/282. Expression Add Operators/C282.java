@@ -24,8 +24,10 @@ class C282 {
         long cur = 0;
         for (int i = start; i < arr.length; i++) {
             // If the current number has a leading zero, break the loop
+            // This is to avoid cases like 1 + 05 = 6
             if (i > start && arr[start] == '0') break;
             // Calculate the current number
+            // 
             cur = cur * 10 + arr[i] - '0';
             // If this is the first number in the expression
             if (sb.length() == 0) {
