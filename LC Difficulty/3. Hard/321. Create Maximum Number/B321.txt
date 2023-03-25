@@ -1,0 +1,46 @@
+i = 0 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+candidate: 
+[9, 2, 5, 8, 3]
+ans(before): 
+[0, 0, 0, 0, 0]
+TRUE
+ans(after) : 
+[9, 2, 5, 8, 3]
+
+i = 1 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+candidate: 
+[9, 6, 5, 8, 3]
+ans(before): 
+[9, 2, 5, 8, 3]
+TRUE
+ans(after) : 
+[9, 6, 5, 8, 3]
+
+i = 2 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+candidate:
+[9, 8, 6, 5, 3]
+ans(before):
+[9, 6, 5, 8, 3]
+TRUE
+ans(after) :
+[9, 8, 6, 5, 3]
+
+i = 3 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+candidate:
+[9, 8, 4, 6, 5]
+ans(before):
+[9, 8, 6, 5, 3]
+FALSE
+ans(after) :
+[9, 8, 6, 5, 3]
+
+i = 4 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+candidate:
+[9, 3, 4, 6, 5]
+ans(before):
+[9, 8, 6, 5, 3]
+FALSE
+ans(after) :
+[9, 8, 6, 5, 3]
+
+9 8 6 5 3
