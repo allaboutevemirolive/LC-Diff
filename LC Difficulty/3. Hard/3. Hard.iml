@@ -46,6 +46,7 @@
       <sourceFolder url="file://$MODULE_DIR$/84. Largest Rectangle in Histogram" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/85. Maximal Rectangle" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/87. Scramble String" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/321. Create Maximum Number" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
