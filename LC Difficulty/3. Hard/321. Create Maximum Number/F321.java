@@ -1,5 +1,7 @@
+import java.util.Arrays;
 
-class B321 {
+// if (greater(candidate, 0, ans, 0)) {
+class E321 {
     public int[] maxNumber(int[] nums1, int[] nums2, int ansLen) {
         int len1 = nums1.length;
         int len2 = nums2.length;
@@ -7,9 +9,12 @@ class B321 {
 
         for (int i = Math.max(0, ansLen - len2); i <= ansLen && i <= len1; ++i) {
             int[] candidate = merge(maxArray(nums1, i), maxArray(nums2, ansLen - i), ansLen);
-            if (greater(candidate, 0, ans, 0)) {
+            System.out.println("candidate: \n" + Arrays.toString(candidate));
+            boolean isGreater = greater(candidate, 0, ans, 0);
+            if (isGreater) {
                 ans = candidate;
-            } 
+            }
+            System.out.println("===================================");
         }
         return ans;
     }
@@ -23,9 +28,23 @@ class B321 {
     }
 
     public boolean greater(int[] nums1, int i, int[] nums2, int j) {
+        System.out.println("greater");
+        System.out.println("i: " + i + ", j: " + j);
+        System.out.println("nums1: " + Arrays.toString(nums1));
+        System.out.println("nums2: " + Arrays.toString(nums2));
+        
         while (i < nums1.length && j < nums2.length && nums1[i] == nums2[j]) {
+            System.out.println("TRUE : while loop");
             i++;
             j++;
+            System.out.println("i: " + i + ", j: " + j);
+        }
+
+        try {
+            System.out.println("j == nums2.length: " + (j == nums2.length));
+            System.out.println("i < nums1.length && nums1[i] > nums2[j]: " + (i < nums1.length && nums1[i] > nums2[j]));
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
         }
         return j == nums2.length || (i < nums1.length && nums1[i] > nums2[j]);
     }
@@ -34,17 +53,9 @@ class B321 {
         int len3 = nums.length;
         int[] ans = new int[ansLen];
         for (int i = 0, j = 0; i < len3; ++i) {
-            // Rule 1 (len3 - i + j > ansLen) : 
-            //      Remaining elements that we need to iterate in nums is greater than bucket that we need to fill
-            // Rule 2 (j > 0) : 
-            //      we already add element into 'ans array' with index j
-            // Rule 3 (ans[j - 1] < nums[i]) : 
-            //      current element in nums is greater than last element added in ans
-            // Then, we can remove last element added in ans
             while (len3 - i + j > ansLen && j > 0 && ans[j - 1] < nums[i]) {
                 j--;
             }
-            // We can add current element (index i) in nums to ans (index j)
             if (j < ansLen) {
                 ans[j++] = nums[i];
             }

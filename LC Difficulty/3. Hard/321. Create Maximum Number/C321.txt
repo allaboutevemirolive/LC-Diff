@@ -1,426 +1,90 @@
-nums1: [3, 4, 6, 5], i: 0
-maxArray
-len3: 4
-ans : 
-[]
------- for loop
-i: 0, j: 0
-ansLen: 0
-FALSE: j < ansLen
------- for loop
-i: 1, j: 0
-ansLen: 0
-FALSE: j < ansLen
------- for loop
-i: 2, j: 0
-ansLen: 0
-FALSE: j < ansLen
------- for loop
-i: 3, j: 0
-ansLen: 0
-FALSE: j < ansLen
-Calculated
-arg1 : []
------------------------------------
-nums2: [9, 1, 2, 5, 8, 3], ansLen - i: 5
-maxArray
-len3: 6
-ans : 
-[0, 0, 0, 0, 0]
------- for loop
-i: 0, j: 0
-ansLen: 5
-TRUE : j < ansLen
-ans:
-[9, 0, 0, 0, 0]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 5
-TRUE : j < ansLen
-ans:
-[9, 1, 0, 0, 0]
-j: 2
------- for loop
-i: 2, j: 2
-ansLen: 5
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 2, 0, 0, 0]
-j: 2
------- for loop
-i: 3, j: 2
-ansLen: 5
-TRUE : j < ansLen
-ans:
-[9, 2, 5, 0, 0]
-j: 3
------- for loop
-i: 4, j: 3
-ansLen: 5
-TRUE : j < ansLen
-ans:
-[9, 2, 5, 8, 0]
-j: 4
------- for loop
-i: 5, j: 4
-ansLen: 5
-TRUE : j < ansLen
-ans:
-[9, 2, 5, 8, 3]
-j: 5
-Calculated
-arg2 : [9, 2, 5, 8, 3]
-===================================
-nums1: [3, 4, 6, 5], i: 1
-maxArray
-len3: 4
-ans :
-[0]
------- for loop
-i: 0, j: 0
-ansLen: 1
-TRUE : j < ansLen
-ans:
-[3]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 1
-TRUE : while loop
-j: 0
-TRUE : j < ansLen
-ans:
-[4]
-j: 1
------- for loop
-i: 2, j: 1
-ansLen: 1
-TRUE : while loop
-j: 0
-TRUE : j < ansLen
-ans:
-[6]
-j: 1
------- for loop
-i: 3, j: 1
-ansLen: 1
-FALSE: j < ansLen
-Calculated
-arg1 : [6]
------------------------------------
-nums2: [9, 1, 2, 5, 8, 3], ansLen - i: 4
-maxArray
-len3: 6
-ans :
-[0, 0, 0, 0]
------- for loop
-i: 0, j: 0
-ansLen: 4
-TRUE : j < ansLen
-ans:
-[9, 0, 0, 0]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 4
-TRUE : j < ansLen
-ans:
-[9, 1, 0, 0]
-j: 2
------- for loop
-i: 2, j: 2
-ansLen: 4
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 2, 0, 0]
-j: 2
------- for loop
-i: 3, j: 2
-ansLen: 4
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 5, 0, 0]
-j: 2
------- for loop
-i: 4, j: 2
-ansLen: 4
-TRUE : j < ansLen
-ans:
-[9, 5, 8, 0]
-j: 3
------- for loop
-i: 5, j: 3
-ansLen: 4
-TRUE : j < ansLen
-ans:
-[9, 5, 8, 3]
-j: 4
-Calculated
-arg2 : [9, 5, 8, 3]
-===================================
-nums1: [3, 4, 6, 5], i: 2
-maxArray
-len3: 4
-ans :
-[0, 0]
------- for loop
-i: 0, j: 0
-ansLen: 2
-TRUE : j < ansLen
-ans:
-[3, 0]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 2
-TRUE : while loop
-j: 0
-TRUE : j < ansLen
-ans:
-[4, 0]
-j: 1
------- for loop
-i: 2, j: 1
-ansLen: 2
-TRUE : while loop
-j: 0
-TRUE : j < ansLen
-ans:
-[6, 0]
-j: 1
------- for loop
-i: 3, j: 1
-ansLen: 2
-TRUE : j < ansLen
-ans:
-[6, 5]
-j: 2
-Calculated
-arg1 : [6, 5]
------------------------------------
-nums2: [9, 1, 2, 5, 8, 3], ansLen - i: 3
-maxArray
-len3: 6
-ans :
-[0, 0, 0]
------- for loop
-i: 0, j: 0
-ansLen: 3
-TRUE : j < ansLen
-ans:
-[9, 0, 0]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 3
-TRUE : j < ansLen
-ans:
-[9, 1, 0]
-j: 2
------- for loop
-i: 2, j: 2
-ansLen: 3
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 2, 0]
-j: 2
------- for loop
-i: 3, j: 2
-ansLen: 3
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 5, 0]
-j: 2
------- for loop
-i: 4, j: 2
-ansLen: 3
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 8, 0]
-j: 2
------- for loop
-i: 5, j: 2
-ansLen: 3
-TRUE : j < ansLen
-ans:
-[9, 8, 3]
-j: 3
-Calculated
-arg2 : [9, 8, 3]
-===================================
-nums1: [3, 4, 6, 5], i: 3
-maxArray
-len3: 4
-ans :
-[0, 0, 0]
------- for loop
-i: 0, j: 0
-ansLen: 3
-TRUE : j < ansLen
-ans:
-[3, 0, 0]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 3
-TRUE : while loop
-j: 0
-TRUE : j < ansLen
-ans:
-[4, 0, 0]
-j: 1
------- for loop
-i: 2, j: 1
-ansLen: 3
-TRUE : j < ansLen
-ans:
-[4, 6, 0]
-j: 2
------- for loop
-i: 3, j: 2
-ansLen: 3
-TRUE : j < ansLen
-ans:
-[4, 6, 5]
-j: 3
-Calculated
-arg1 : [4, 6, 5]
------------------------------------
-nums2: [9, 1, 2, 5, 8, 3], ansLen - i: 2
-maxArray
-len3: 6
-ans :
-[0, 0]
------- for loop
-i: 0, j: 0
-ansLen: 2
-TRUE : j < ansLen
-ans:
-[9, 0]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 2
-TRUE : j < ansLen
-ans:
-[9, 1]
-j: 2
------- for loop
-i: 2, j: 2
-ansLen: 2
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 2]
-j: 2
------- for loop
-i: 3, j: 2
-ansLen: 2
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 5]
-j: 2
------- for loop
-i: 4, j: 2
-ansLen: 2
-TRUE : while loop
-j: 1
-TRUE : j < ansLen
-ans:
-[9, 8]
-j: 2
------- for loop
-i: 5, j: 2
-ansLen: 2
-FALSE: j < ansLen
-Calculated
-arg2 : [9, 8]
-===================================
-nums1: [3, 4, 6, 5], i: 4
-maxArray
-len3: 4
-ans :
-[0, 0, 0, 0]
------- for loop
-i: 0, j: 0
-ansLen: 4
-TRUE : j < ansLen
-ans:
-[3, 0, 0, 0]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 4
-TRUE : j < ansLen
-ans:
-[3, 4, 0, 0]
-j: 2
------- for loop
-i: 2, j: 2
-ansLen: 4
-TRUE : j < ansLen
-ans:
-[3, 4, 6, 0]
-j: 3
------- for loop
-i: 3, j: 3
-ansLen: 4
-TRUE : j < ansLen
-ans:
+i = 0 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+
+i: 0, ansLen - i: 5, ansLen: 5
+nums1: 
 [3, 4, 6, 5]
-j: 4
-Calculated
-arg1 : [3, 4, 6, 5]
------------------------------------
-nums2: [9, 1, 2, 5, 8, 3], ansLen - i: 1
-maxArray
-len3: 6
-ans :
-[0]
------- for loop
-i: 0, j: 0
-ansLen: 1
-TRUE : j < ansLen
-ans:
-[9]
-j: 1
------- for loop
-i: 1, j: 1
-ansLen: 1
-FALSE: j < ansLen
------- for loop
-i: 2, j: 1
-ansLen: 1
-FALSE: j < ansLen
------- for loop
-i: 3, j: 1
-ansLen: 1
-FALSE: j < ansLen
------- for loop
-i: 4, j: 1
-ansLen: 1
-FALSE: j < ansLen
------- for loop
-i: 5, j: 1
-ansLen: 1
-FALSE: j < ansLen
-Calculated
-arg2 : [9]
+nums2: 
+[9, 1, 2, 5, 8, 3]
+
+candidate: 
+[9, 2, 5, 8, 3]
+ans(before): 
+[0, 0, 0, 0, 0]
+
+TRUE : isGreater
+ans(after) : 
+[9, 2, 5, 8, 3]
+===================================
+
+i = 1 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+
+i: 1, ansLen - i: 4, ansLen: 5
+nums1: 
+[3, 4, 6, 5]
+nums2: 
+[9, 1, 2, 5, 8, 3]
+
+candidate: 
+[9, 6, 5, 8, 3]
+ans(before):
+[9, 2, 5, 8, 3]
+
+TRUE : isGreater
+ans(after) :
+[9, 6, 5, 8, 3]
+===================================
+
+i = 2 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+
+i: 2, ansLen - i: 3, ansLen: 5
+nums1:
+[3, 4, 6, 5]
+nums2:
+[9, 1, 2, 5, 8, 3]
+
+candidate:
+[9, 8, 6, 5, 3]
+ans(before):
+[9, 6, 5, 8, 3]
+
+TRUE : isGreater
+ans(after) :
+[9, 8, 6, 5, 3]
+===================================
+
+i = 3 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+
+i: 3, ansLen - i: 2, ansLen: 5
+nums1:
+[3, 4, 6, 5]
+nums2:
+[9, 1, 2, 5, 8, 3]
+
+candidate:
+[9, 8, 4, 6, 5]
+ans(before):
+[9, 8, 6, 5, 3]
+
+FALSE : isGreater
+ans(after) :
+[9, 8, 6, 5, 3]
+===================================
+
+i = 4 | ansLen - len2 = -1 | ansLen = 5 | len1 = 4 | len2 = 6
+
+i: 4, ansLen - i: 1, ansLen: 5
+nums1:
+[3, 4, 6, 5]
+nums2:
+[9, 1, 2, 5, 8, 3]
+
+candidate:
+[9, 3, 4, 6, 5]
+ans(before): 
+[9, 8, 6, 5, 3]
+
+FALSE : isGreater
+ans(after) :
+[9, 8, 6, 5, 3]
 ===================================
 9 8 6 5 3
