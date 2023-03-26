@@ -18,6 +18,9 @@
  * 
  * 5. For each cumulative sum that we have found, we update the count variable.
  *      - count += j - k;
+ * 
+ * Source : 
+ * https://leetcode.com/problems/count-of-range-sum/solutions/77990/share-my-solution/
  */
 
 class B327 {
