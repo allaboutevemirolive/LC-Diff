@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 // if (greater(candidate, 0, ans, 0)) {
-class E321 {
+class F321 {
     public int[] maxNumber(int[] nums1, int[] nums2, int ansLen) {
         int len1 = nums1.length;
         int len2 = nums2.length;

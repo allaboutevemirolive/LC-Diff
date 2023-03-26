@@ -16,6 +16,7 @@ class E321 {
             System.out.println("candidate: \n" + Arrays.toString(candidate));
             System.out.println("ans(before): \n" + Arrays.toString(ans));
             System.out.println("i : " + i + ", j : 0");
+            System.out.println();
             if (isGreater) {
                 System.out.println("TRUE : isGreater");
                 ans = candidate;

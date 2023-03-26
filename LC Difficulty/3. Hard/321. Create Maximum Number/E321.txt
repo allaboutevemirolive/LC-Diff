@@ -15,9 +15,9 @@ j == nums2.length: false
 i < nums1.length && nums1[i] > nums2[j]: false
 ...................................
 isGreater: false
-ans(before): 
+ans(before):
 [0, 0, 0, 0, 0]
-ans(after): 
+ans(after):
 [9, 0, 0, 0, 0]
 i: 0, j: 1, r: 0
 Exception: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
@@ -96,6 +96,7 @@ candidate:
 ans(before):
 [0, 0, 0, 0, 0]
 i : 0, j : 0
+
 TRUE : isGreater
 ans(after):
 [9, 2, 5, 8, 3]
@@ -197,11 +198,12 @@ i: 1, j: 1
 j == nums2.length: false
 i < nums1.length && nums1[i] > nums2[j]: true
 ...................................
-candidate:
+candidate: 
 [9, 6, 5, 8, 3]
 ans(before):
 [9, 2, 5, 8, 3]
 i : 1, j : 0
+
 TRUE : isGreater
 ans(after):
 [9, 6, 5, 8, 3]
@@ -241,7 +243,7 @@ j == nums2.length: false
 i < nums1.length && nums1[i] > nums2[j]: false
 ...................................
 isGreater: false
-ans(before):
+ans(before): 
 [9, 0, 0, 0, 0]
 ans(after):
 [9, 8, 0, 0, 0]
@@ -312,6 +314,7 @@ candidate:
 ans(before):
 [9, 6, 5, 8, 3]
 i : 2, j : 0
+
 TRUE : isGreater
 ans(after):
 [9, 8, 6, 5, 3]
@@ -383,7 +386,7 @@ j == nums2.length: true
 Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
 ...................................
 isGreater: true
-ans(before): 
+ans(before):
 [9, 8, 4, 0, 0]
 ans(after):
 [9, 8, 4, 6, 0]
@@ -420,13 +423,14 @@ candidate:
 ans(before):
 [9, 8, 6, 5, 3]
 i : 3, j : 0
+
 FALSE : isGreater
 ans(after):
 [9, 8, 6, 5, 3]
 ===================================
 nums1:
 [3, 4, 6, 5]
-nums2:
+nums2: 
 [9]
 ansLen: 5
 ans:
@@ -489,7 +493,7 @@ j == nums2.length: true
 Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
 ...................................
 isGreater: true
-ans(before):
+ans(before): 
 [9, 3, 4, 0, 0]
 ans(after):
 [9, 3, 4, 6, 0]
@@ -519,11 +523,12 @@ i: 1, j: 1
 j == nums2.length: false
 i < nums1.length && nums1[i] > nums2[j]: false
 ...................................
-candidate: 
+candidate:
 [9, 3, 4, 6, 5]
 ans(before):
 [9, 8, 6, 5, 3]
 i : 4, j : 0
+
 FALSE : isGreater
 ans(after):
 [9, 8, 6, 5, 3]
