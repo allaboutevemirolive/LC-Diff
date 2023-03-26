@@ -1,0 +1,536 @@
+nums1: 
+[]
+nums2: 
+[9, 2, 5, 8, 3]
+ansLen: 5
+ans: 
+[0, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 0, r: 0
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[0, 0, 0, 0, 0]
+ans(after):
+[9, 0, 0, 0, 0]
+i: 0, j: 1, r: 0
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+
+for loop
+i: 0, j: 1, r: 1
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 0, 0, 0, 0]
+ans(after):
+[9, 2, 0, 0, 0]
+i: 0, j: 2, r: 1
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+
+for loop
+i: 0, j: 2, r: 2
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 2, 0, 0, 0]
+ans(after):
+[9, 2, 5, 0, 0]
+i: 0, j: 3, r: 2
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+
+for loop
+i: 0, j: 3, r: 3
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 2, 5, 0, 0]
+ans(after):
+[9, 2, 5, 8, 0]
+i: 0, j: 4, r: 3
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+
+for loop
+i: 0, j: 4, r: 4
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 2, 5, 8, 0]
+ans(after):
+[9, 2, 5, 8, 3]
+i: 0, j: 5, r: 4
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+***********************************
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: true
+...................................
+candidate:
+[9, 2, 5, 8, 3]
+ans(before):
+[0, 0, 0, 0, 0]
+i : 0, j : 0
+
+TRUE : isGreater
+ans(after):
+[9, 2, 5, 8, 3]
+===================================
+nums1:
+[6]
+nums2:
+[9, 5, 8, 3]
+ansLen: 5
+ans:
+[0, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 0, r: 0
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[0, 0, 0, 0, 0]
+ans(after):
+[9, 0, 0, 0, 0]
+i: 0, j: 1, r: 0
+nums1[i]: 6, nums2[j]: 5
+ans(after):
+[9, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 1, r: 1
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: true
+...................................
+isGreater: true
+ans(before):
+[9, 0, 0, 0, 0]
+ans(after):
+[9, 6, 0, 0, 0]
+i: 1, j: 1, r: 1
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+for loop
+i: 1, j: 1, r: 2
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 6, 0, 0, 0]
+ans(after):
+[9, 6, 5, 0, 0]
+i: 1, j: 2, r: 2
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+for loop
+i: 1, j: 2, r: 3
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 6, 5, 0, 0]
+ans(after):
+[9, 6, 5, 8, 0]
+i: 1, j: 3, r: 3
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+for loop
+i: 1, j: 3, r: 4
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 6, 5, 8, 0]
+ans(after):
+[9, 6, 5, 8, 3]
+i: 1, j: 4, r: 4
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+***********************************
+...................................
+greater
+TRUE : while loop
+i: 1, j: 1
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: true
+...................................
+candidate: 
+[9, 6, 5, 8, 3]
+ans(before):
+[9, 2, 5, 8, 3]
+i : 1, j : 0
+
+TRUE : isGreater
+ans(after):
+[9, 6, 5, 8, 3]
+===================================
+nums1:
+[6, 5]
+nums2:
+[9, 8, 3]
+ansLen: 5
+ans:
+[0, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 0, r: 0
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[0, 0, 0, 0, 0]
+ans(after):
+[9, 0, 0, 0, 0]
+i: 0, j: 1, r: 0
+nums1[i]: 6, nums2[j]: 8
+ans(after):
+[9, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 1, r: 1
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before): 
+[9, 0, 0, 0, 0]
+ans(after):
+[9, 8, 0, 0, 0]
+i: 0, j: 2, r: 1
+nums1[i]: 6, nums2[j]: 3
+ans(after):
+[9, 8, 0, 0, 0]
+
+
+for loop
+i: 0, j: 2, r: 2
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: true
+...................................
+isGreater: true
+ans(before):
+[9, 8, 0, 0, 0]
+ans(after):
+[9, 8, 6, 0, 0]
+i: 1, j: 2, r: 2
+nums1[i]: 5, nums2[j]: 3
+ans(after):
+[9, 8, 6, 0, 0]
+
+
+for loop
+i: 1, j: 2, r: 3
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: true
+...................................
+isGreater: true
+ans(before):
+[9, 8, 6, 0, 0]
+ans(after):
+[9, 8, 6, 5, 0]
+i: 2, j: 2, r: 3
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+
+
+for loop
+i: 2, j: 2, r: 4
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 8, 6, 5, 0]
+ans(after):
+[9, 8, 6, 5, 3]
+i: 2, j: 3, r: 4
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+***********************************
+...................................
+greater
+TRUE : while loop
+i: 1, j: 1
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: true
+...................................
+candidate:
+[9, 8, 6, 5, 3]
+ans(before):
+[9, 6, 5, 8, 3]
+i : 2, j : 0
+
+TRUE : isGreater
+ans(after):
+[9, 8, 6, 5, 3]
+===================================
+nums1:
+[4, 6, 5]
+nums2:
+[9, 8]
+ansLen: 5
+ans:
+[0, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 0, r: 0
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[0, 0, 0, 0, 0]
+ans(after):
+[9, 0, 0, 0, 0]
+i: 0, j: 1, r: 0
+nums1[i]: 4, nums2[j]: 8
+ans(after):
+[9, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 1, r: 1
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[9, 0, 0, 0, 0]
+ans(after):
+[9, 8, 0, 0, 0]
+i: 0, j: 2, r: 1
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+
+
+for loop
+i: 0, j: 2, r: 2
+...................................
+greater
+j == nums2.length: true
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+...................................
+isGreater: true
+ans(before):
+[9, 8, 0, 0, 0]
+ans(after):
+[9, 8, 4, 0, 0]
+i: 1, j: 2, r: 2
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+
+
+for loop
+i: 1, j: 2, r: 3
+...................................
+greater
+j == nums2.length: true
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+...................................
+isGreater: true
+ans(before):
+[9, 8, 4, 0, 0]
+ans(after):
+[9, 8, 4, 6, 0]
+i: 2, j: 2, r: 3
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+
+
+for loop
+i: 2, j: 2, r: 4
+...................................
+greater
+j == nums2.length: true
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+...................................
+isGreater: true
+ans(before):
+[9, 8, 4, 6, 0]
+ans(after):
+[9, 8, 4, 6, 5]
+i: 3, j: 2, r: 4
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+***********************************
+...................................
+greater
+TRUE : while loop
+i: 1, j: 1
+TRUE : while loop
+i: 2, j: 2
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+candidate:
+[9, 8, 4, 6, 5]
+ans(before):
+[9, 8, 6, 5, 3]
+i : 3, j : 0
+
+FALSE : isGreater
+ans(after):
+[9, 8, 6, 5, 3]
+===================================
+nums1:
+[3, 4, 6, 5]
+nums2: 
+[9]
+ansLen: 5
+ans:
+[0, 0, 0, 0, 0]
+
+
+for loop
+i: 0, j: 0, r: 0
+...................................
+greater
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+isGreater: false
+ans(before):
+[0, 0, 0, 0, 0]
+ans(after):
+[9, 0, 0, 0, 0]
+i: 0, j: 1, r: 0
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+for loop
+i: 0, j: 1, r: 1
+...................................
+greater
+j == nums2.length: true
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+...................................
+isGreater: true
+ans(before):
+[9, 0, 0, 0, 0]
+ans(after):
+[9, 3, 0, 0, 0]
+i: 1, j: 1, r: 1
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+for loop
+i: 1, j: 1, r: 2
+...................................
+greater
+j == nums2.length: true
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+...................................
+isGreater: true
+ans(before):
+[9, 3, 0, 0, 0]
+ans(after):
+[9, 3, 4, 0, 0]
+i: 2, j: 1, r: 2
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+for loop
+i: 2, j: 1, r: 3
+...................................
+greater
+j == nums2.length: true
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+...................................
+isGreater: true
+ans(before): 
+[9, 3, 4, 0, 0]
+ans(after):
+[9, 3, 4, 6, 0]
+i: 3, j: 1, r: 3
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+for loop
+i: 3, j: 1, r: 4
+...................................
+greater
+j == nums2.length: true
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+...................................
+isGreater: true
+ans(before):
+[9, 3, 4, 6, 0]
+ans(after):
+[9, 3, 4, 6, 5]
+i: 4, j: 1, r: 4
+Exception: java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+***********************************
+...................................
+greater
+TRUE : while loop
+i: 1, j: 1
+j == nums2.length: false
+i < nums1.length && nums1[i] > nums2[j]: false
+...................................
+candidate:
+[9, 3, 4, 6, 5]
+ans(before):
+[9, 8, 6, 5, 3]
+i : 4, j : 0
+
+FALSE : isGreater
+ans(after):
+[9, 8, 6, 5, 3]
+===================================
+9 8 6 5 3
