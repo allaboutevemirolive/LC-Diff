@@ -1,3 +1,25 @@
+/*
+ * 1. We need to convert the nums array into cumulative sums array.
+ *         for (int i = 0; i < n; ++i) {
+ *              sums[i + 1] = sums[i] + nums[i];
+ *         }
+ * 
+ * 2. Use divide and conquer to divide the cumulative sums array into two parts until the length of the array is 1.
+ * 
+ *        int count = countWhileMergeSort(sums, start, mid, lower, upper) + countWhileMergeSort(sums, mid, end, lower, upper);
+ * 
+ * 3. Find cumulative sums for the left part and right part of the sums array that are within the range of lower and upper.
+ *      - while (k < end && sums[k] - sums[i] < lower)
+ *      - while (j < end && sums[j] - sums[i] <= upper)
+ * 
+ * 4. Sort the sums array and store it in the cache array.
+ *      - while (t < end && sums[i] > sums[t])
+ *      - cache[r++] = sums[t++];
+ * 
+ * 5. For each cumulative sum that we have found, we update the count variable.
+ *      - count += j - k;
+ */
+
 class B327 {
     public int countRangeSum(int[] nums, int lower, int upper) {
         int n = nums.length;
