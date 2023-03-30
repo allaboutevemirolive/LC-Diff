@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class A332 {
     public static void main(String[] args) {
-        C332 solution = new C332();
+        F332 solution = new F332();
         
         // List<List<String>> tickets1 = Arrays.asList(
         //     Arrays.asList("MUC", "LHR"),
@@ -24,6 +24,6 @@ public class A332 {
             Arrays.asList("ATL", "SFO")
         );
         List<String> itinerary2 = solution.findItinerary(tickets2);
-        System.out.println(itinerary2); // expected output: [JFK, ATL, JFK, SFO, ATL, SFO]
+        System.out.println(itinerary2); 
     }
 }

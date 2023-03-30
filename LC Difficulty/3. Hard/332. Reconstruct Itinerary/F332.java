@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-class B332 {
+class F332 {
     public List<String> findItinerary(List<List<String>> tickets) {
         LinkedList<String> res = new LinkedList<>();
 
@@ -13,19 +13,6 @@ class B332 {
         return res;
     }
 
-    // mapping tickets: source -> destinations
-    // tickets = 
-    // [
-    //     ["JFK","SFO"],
-    //     ["JFK","ATL"],
-    //     ["SFO","ATL"],
-    //     ["ATL","JFK"],
-    //     ["ATL","SFO"]
-    // ]
-    // Mappping:
-    // ATL=[JFK, SFO], 
-    // SFO=[ATL], 
-    // JFK=[ATL, SFO]
     private Map<String, PriorityQueue<String>> buildGraph(List<List<String>> tickets) {
         Map<String, PriorityQueue<String>> graph = new HashMap<>();
 
@@ -34,25 +21,38 @@ class B332 {
             String arr = flight.get(1);
 
             graph.computeIfAbsent(dep, k -> new PriorityQueue<>()).add(arr);
-            // if (!graph.containsKey(dep)) {
-            // graph.put(dep, new PriorityQueue<>());
-            // }
-            // graph.get(dep).add(arr);
         }
+        System.out.println();
+        System.out.println(graph);
+        System.out.println();
         return graph;
     }
 
     private void dfs(LinkedList<String> res, Map<String, PriorityQueue<String>> graph, String source) {
-        // Get value for the key source
         PriorityQueue<String> arrivals = graph.get(source);
+        
+        System.out.println();
+        System.out.println("source: " + source);
+        System.out.println("arrivals: " + arrivals);
+
         while (arrivals != null && !arrivals.isEmpty()) {
-            // update new source
-            // remove the first value/element from the key source
+            
             String next = arrivals.poll();
-            // dfs with new source
+            System.out.println("arrivals(poll): " + arrivals);
+            System.out.println();
+
             dfs(res, graph, next);
         }
-        // add source to the head of the list. Starting from the end dfs to the first dfs
+        System.out.println();
+        System.out.println("************************************");
+        System.out.println("source: " + source);
+
         res.addFirst(source);
+
+        LinkedList<String> copyRes = new LinkedList<>(res);
+        while (!copyRes.isEmpty()) {
+            System.out.print(copyRes.poll() + " ");
+        }
+        System.out.println();
     }
 }
