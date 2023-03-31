@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/self-crossing/solutions/729133/how-to-explain-to-interviewer-335-self-crossing/
+// https://leetcode.com/problems/self-crossing/solutions/79141/another-python/
+
 class B335 {
     public boolean isSelfCrossing(int[] x) {
         // If the length of the array is less than or equal to 3, 
@@ -17,6 +20,8 @@ class B335 {
             return false;
         }
         // Check if the path is intersecting with itself. If it is, then modify the path to avoid self-crossing.
+        // checks whether the path intersects with itself after moving outward and back twice.
+        // checks whether the path intersects with itself in a straight line, after moving outward just once.
         if ((i >= 4 && x[i] >= x[i - 2] - x[i - 4]) || (i == 3 && x[i] == x[i - 2])) {  
             x[i - 1] -= x[i - 3];
         }
