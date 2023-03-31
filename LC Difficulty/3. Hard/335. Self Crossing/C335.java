@@ -42,7 +42,7 @@ class C335 {
             // If Normal, check if the second opposite has same length or not
             x[i - 1] -= x[i - 3];
         }
-        // Move to the next straight line
+        // Move to the next spiral
         i++;
         // Check if there is still spiral need to iterate
         // keep spiraling inward
