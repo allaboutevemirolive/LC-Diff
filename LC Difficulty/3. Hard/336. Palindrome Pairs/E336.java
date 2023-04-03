@@ -43,6 +43,7 @@ class E336 {
                     boolean isTrue = isPalindrome(ch, j + 1, ch.length - 1);
 
                     if (dict[j + 1] && isTrue) {
+                        System.out.println();
                         System.out.println("TRUE");
                         System.out.println("re: " + re + "\nbeginIndex(ch.length - j - 1): " + (ch.length - j - 1) + "\nendIndex(ch.length): " + ch.length);
                         String check = re.substring(ch.length - j - 1, ch.length);
@@ -55,6 +56,7 @@ class E336 {
                             System.out.println("map.containsKey(check): " + map.containsKey(check));
                         }
                     } else {
+                        System.out.println();
                         System.out.println("FALSE");
                     }
                 }

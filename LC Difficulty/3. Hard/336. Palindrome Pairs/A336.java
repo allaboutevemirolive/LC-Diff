@@ -1,5 +1,4 @@
 import java.util.List;
-
 class A336 {
     public static void main(String[] args) {
         E336 obj = new E336();
