@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-class E336 {
+class F336 {
     public List<List<Integer>> palindromePairs(String[] words) {
 
         List<List<Integer>> res = new ArrayList<>();
@@ -15,71 +15,38 @@ class E336 {
             map.put(word, cnt);
             cnt++;
             dict[word.length()] = true;
-
         }
-
-
         for (int i = 0; i < words.length; i++) {
-            System.out.println();
-            System.out.println("=====================================");
             String word = words[i];
-            System.out.println("i: " + i + "\nword: " + word + "\nmap: " + map);
-
             if (word.length() > 0) {
-                System.out.println();
                 char[] ch = word.toCharArray();
 
                 String re = new StringBuilder(word).reverse().toString();
 
-                System.out.println("ch: " + Arrays.toString(ch) + "\nre: " + re);
-
-                System.out.println();
-                System.out.println("-------------------------------------");
-                System.out.println("for 1");
                 for (int j = 0; j < ch.length - 1; j++) {
-
-                    // isPalindrome(char[] ch, int left, int right)
-                    System.out.println("ch: " + Arrays.toString(ch) + "\nleft: " + (j + 1) + "\nright: " + (ch.length - 1) +"\nj: " + j);
-                    boolean isTrue = isPalindrome(ch, j + 1, ch.length - 1);
-
-                    
-
-                    if (dict[j + 1] && isTrue) {
-                        System.out.println("isTRUE: dict[j + 1] = " + dict[j + 1] + " && isTrue = " + isTrue);
-                        System.out.println("re: " + re + "\nbeginIndex(ch.length - j - 1): " + (ch.length - j - 1) + "\nendIndex(ch.length): " + ch.length);
+                    if (dict[j + 1] && isPalindrome(ch, j + 1, ch.length - 1)) {
                         String check = re.substring(ch.length - j - 1, ch.length);
-                        System.out.println("check: " + check);
 
                         if (map.containsKey(check)) {
-                            System.out.println("TRUE");
-                            System.out.println("map.containsKey(check): " + map.containsKey(check));
                             res.add(Arrays.asList(i, map.get(check)));
-                            System.out.println("res: " + res);
-                        } else {
-                            System.out.println("FALSE");
-                            System.out.println("map.containsKey(check): " + map.containsKey(check));
-                            System.out.println("map: " + map);
                         }
-                    } else {
-                        System.out.println("isFALSE");
                     }
-                    System.out.println();
                 }
-                System.out.println();
-                System.out.println("-------------------------------------");
-                System.out.println("for 2");
                 for (int j = 0; j < ch.length - 1; j++) {
-
-                    if (dict[ch.length - j - 1] && isPalindrome(ch, 0, j)) {
+                    System.out.println("j: " + j);
+                    boolean isPalindrome = isPalindrome(ch, 0, j);
+                    if (dict[ch.length - j - 1] && isPalindrome) {
+                        System.out.println("is palindrome");
+                        System.out.println();
                         String check = re.substring(0, ch.length - j - 1);
 
                         if (map.containsKey(check)) {
                             res.add(Arrays.asList(map.get(check), i));
                         }
+                    } else {
+                        System.out.println("not palindrome");
                     }
                 }
-
-                System.out.println("-------------------------------------");
                 if (isPalindrome(ch, 0, ch.length - 1)) {
                     if (map.containsKey("")) {
                         int index = map.get("");
