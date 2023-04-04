@@ -25,7 +25,8 @@ class B336 {
                 char[] ch = word.toCharArray();
                 String re = new StringBuilder(word).reverse().toString();
 
-                // Not sure what test case should be included but you can refer to the next comment
+                // Base case: ["a","b","c","ab","ac","aa"]
+                // Refer to the next comment
                 for (int j = 0; j < ch.length - 1; j++) {
 
                     if (dict[j + 1] && isPalindrome(ch, j + 1, ch.length - 1)) {
