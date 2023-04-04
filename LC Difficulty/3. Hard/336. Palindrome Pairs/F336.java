@@ -32,16 +32,41 @@ class F336 {
                         }
                     }
                 }
+                System.out.println("=====================================");
+                System.out.println("ch: " + Arrays.toString(ch) + "\nre: " + re);
+
                 for (int j = 0; j < ch.length - 1; j++) {
+                    System.out.println();
+                    System.out.println("i : " + i);
                     System.out.println("j: " + j);
+
+                    System.out.print("ch(0, j(inclusive)): " );
+                    for (int k = 0; k >= 0 && k <= j; k++) {
+                        System.out.print(ch[k]);
+                    }
+                    System.out.println();
+
                     boolean isPalindrome = isPalindrome(ch, 0, j);
+
+                    System.out.println("isPalindrome: " + isPalindrome);
+                    System.out.println("dict[ch.length - j - 1]: " + dict[ch.length - j - 1]);
+
                     if (dict[ch.length - j - 1] && isPalindrome) {
                         System.out.println("is palindrome");
-                        System.out.println();
+
                         String check = re.substring(0, ch.length - j - 1);
+                        System.out.println("re: " + re + "\nch.length - j - 1: " + (ch.length - j - 1));
+                        System.out.println("check: " + check);
 
                         if (map.containsKey(check)) {
+                            System.out.println("map.containsKey(check): " + map.containsKey(check));
+                            System.out.println("map: " + map);
+                            System.out.println("i: " + i);
+                            System.out.println("res(before): " + res);
                             res.add(Arrays.asList(map.get(check), i));
+                            System.out.println("res(after) : " + res);
+                        } else {
+                            System.out.println("not map.containsKey(check): " + map.containsKey(check));
                         }
                     } else {
                         System.out.println("not palindrome");

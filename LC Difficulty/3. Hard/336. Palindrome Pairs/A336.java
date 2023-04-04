@@ -6,5 +6,4 @@ class A336 {
         List<List<Integer>> palindromePairs = obj.palindromePairs(words);
         System.out.println(palindromePairs);
     }
-    
 }
