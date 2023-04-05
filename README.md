@@ -9,3 +9,9 @@ The difficulty level of each solution is clearly `labeled`, making it easy to fi
 Whether you're a `beginner` or an `experienced` coder, this repository has something to offer. 
 
 So, it will help you a lot to `prepare` for your next `interview`.
+
+## Check out
+
+[LC-C++](https://github.com/allaboutevemirolive/LC-CPP/blob/main/README.md)
+
+[LC-Python](https://github.com/allaboutevemirolive/LC-Python)
