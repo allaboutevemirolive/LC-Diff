@@ -1,9 +1,0 @@
-The code above is a solution to the problem of reversing the nodes of a linked list in groups of "k" nodes. The main method of this class, "reverseKGroup", takes in the head of a linked list and an integer "k", and returns the modified list with the nodes reversed in groups of "k".
-
-The method starts by initializing a "curr" variable to the head of the list, and a "count" variable to 0. It then enters a while loop that runs as long as "curr" is not null and "count" is less than "k". Inside the while loop, "curr" is updated to its next node, and "count" is incremented.
-
-Once the while loop is done, the method checks if "count" is equal to "k". If it is, the method recursively calls itself with "curr" as the new head and "k" as the input, effectively reversing the next "k" nodes of the list. Then, another while loop is entered that runs "count" number of times, reversing the pointers of the current "k" nodes.
-
-After the while loop, "head" is updated to "curr", and the method returns "head" as the new head of the modified list.
-
-It should be noted that the code above solves the problem in a recursive manner and with O(n) extra memory space, where n is the number of nodes in the list.
