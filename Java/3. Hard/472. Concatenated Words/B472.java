@@ -32,8 +32,10 @@ public class B472 {
         for (int i = start + min; i <= end - min; i++) {
             // check if the substring from start to i is in the dictionary
             if (set.contains(word.substring(start, i))
-                    // check if the substring from i to end is in the dictionary or is a concatenation of other words in the dictionary
-                    && (set.contains(word.substring(i, end)) || concat(word, i, end, min))) {
+                    // check if the substring from i to end is in the dictionary 
+                    // or is a concatenation of other words in the dictionary
+                    && (set.contains(word.substring(i, end)) 
+                    || concat(word, i, end, min))) {
                 return true;
             }
         }
